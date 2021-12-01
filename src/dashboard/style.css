@@ -1,0 +1,38 @@
+.SideBarNav .MuiPaper-root, .TopBarCollapse {
+    background: #112B45!important;
+    color: #FFFFFF;
+}
+.TopBarCollapse .FontWeak{
+    font-weight: lighter;
+}
+.TopBarCollapse .FontNormal{
+    font-weight: normal;
+}
+.SideBarNav .MuiListItem a {
+    color: #A8B8C9;
+}
+.listDs,.listClient{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.listTitle {
+    padding-top: 0;
+    padding-bottom: 1.5em;
+}
+
+.listDs span {
+    font-size: 15px;
+    margin-top: -10px;
+    margin-bottom: -20px;
+}
+
+.listTitle span,.listClient span{
+    font-size: 30px;
+}
+
+.listClient span {
+    margin-top: -15px;
+    margin-bottom: -30px;
+    font-weight: 500;
+}
