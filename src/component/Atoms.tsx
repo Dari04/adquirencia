@@ -12,8 +12,6 @@ import { Typography, Grid, MenuItem } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import SaveIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import theme from "../theme";
-import imgFav from "../img/imgRefacto.png";
-import poweredBy from "../img/poweredby.png";
 import iconpluss from "../img/Icons.svg";
 import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
@@ -56,17 +54,6 @@ const Atoms: React.FC = () => {
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>
-        <Box m={0} p={6} className="bg-black">
-          <img alt="gg" src={imgFav} />
-
-          <div className={"DS-Tittle"}>Design System</div>
-
-          <div className={"DS-Head"}>
-            <div className="DS-Light">Refactor SNR</div>
-          </div>
-          <img src={poweredBy} alt="" />
-        </Box>
-
         <Grid p={5} alignItems="center">
           <Grid item md={10} sm={11}>
             <Box

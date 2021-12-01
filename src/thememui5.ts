@@ -302,12 +302,12 @@ const theme = createTheme({
     }
   },
   typography: {
-    fontFamily: "Inter",
+    fontFamily: ["IBM Plex Sans", "IBM Plex Mono"].join(","),
     h1: {
       fontSize: ThemeFonts.web.h1 + `px`,
       fontStyle: "normal",
       fontWeight: 200,
-      lineHeight: "120%",
+      lineHeight: "140%",
       "@media (min-width:961px) and (max-width:1280px)": {
         fontSize: ThemeFonts.webxs.h1 + `px`
       },
@@ -321,7 +321,7 @@ const theme = createTheme({
     h2: {
       fontSize: ThemeFonts.web.h2 + `px`,
       fontWeight: 500,
-      lineHeight: "120%",
+      lineHeight: "140%",
       fontStyle: "normal",
       "@media (min-width:961px) and (max-width:1280px)": {
         fontSize: ThemeFonts.webxs.h2 + `px`,
@@ -339,80 +339,79 @@ const theme = createTheme({
     h3: {
       fontSize: ThemeFonts.web.h3 + `px`,
       fontWeight: 500,
-      lineHeight: "120%",
+      lineHeight: "140%",
       fontStyle: "normal",
       "@media (min-width:961px) and (max-width:1280px)": {
         fontSize: ThemeFonts.webxs.h3 + `px`,
-        fontWeight: "500"
+        fontWeight: "bold"
       },
       "@media (min-width:361px) and (max-width:960px)": {
         fontSize: ThemeFonts.mobile.h3 + `px`,
-        fontWeight: "500"
+        fontWeight: "bold"
       },
       "@media (max-width:360px)": {
         fontSize: ThemeFonts.mobilexs.h3 + `px`,
-        fontWeight: "500"
+        fontWeight: "bold"
       }
     },
     h4: {
       fontSize: ThemeFonts.web.h4 + `px`,
       fontWeight: 500,
-      lineHeight: "120%",
+      lineHeight: "140%",
       fontStyle: "normal",
       "@media (min-width:961px) and (max-width:1280px)": {
         fontSize: ThemeFonts.webxs.h4 + `px`,
-        fontWeight: "500"
+        fontWeight: "bold"
       },
       "@media (min-width:361px) and (max-width:960px)": {
         fontSize: ThemeFonts.mobile.h4 + `px`,
-        fontWeight: "500"
+        fontWeight: "bold"
       },
       "@media (max-width:360px)": {
         fontSize: ThemeFonts.mobilexs.h4 + `px`,
-        fontWeight: "500"
+        fontWeight: "bold"
       }
     },
     h5: {
       fontSize: ThemeFonts.web.h5 + `px`,
       fontWeight: 500,
-      lineHeight: "120%",
+      lineHeight: "140%",
       fontStyle: "normal",
       "@media (min-width:961px) and (max-width:1280px)": {
         fontSize: ThemeFonts.webxs.h5 + `px`,
-        fontWeight: "500"
+        fontWeight: "bold"
       },
       "@media (min-width:361px) and (max-width:960px)": {
         fontSize: ThemeFonts.mobile.h5 + `px`,
-        fontWeight: "500"
+        fontWeight: "bold"
       },
       "@media (max-width:360px)": {
         fontSize: ThemeFonts.mobilexs.h5 + `px`,
-        fontWeight: "500"
+        fontWeight: "bold"
       }
     },
     h6: {
       fontSize: ThemeFonts.web.h6 + `px`,
       fontWeight: 400,
-      lineHeight: "120%",
+      lineHeight: "140%",
       fontStyle: "normal",
       "@media (min-width:961px) and (max-width:1280px)": {
         fontSize: ThemeFonts.webxs.h6 + `px`,
-        fontWeight: "500"
+        fontWeight: "bold"
       },
       "@media (min-width:361px) and (max-width:960px)": {
         fontSize: ThemeFonts.mobile.h6 + `px`,
-        fontWeight: "500"
+        fontWeight: "bold"
       },
       "@media (max-width:360px)": {
         fontSize: ThemeFonts.mobilexs.h6 + `px`,
-        fontWeight: "500"
+        fontWeight: "bold"
       }
     },
     subtitle1: {
-      fontFamily: "Inter",
+      fontFamily: "IBM Plex Sans",
       fontSize: ThemeFonts.web.subtitle1 + `px`,
       fontWeight: 500,
-      lineHeight: "120%",
       "@media (min-width:961px) and (max-width:1280px)": {
         fontSize: ThemeFonts.webxs.subtitle1 + `px`
       },
@@ -426,7 +425,6 @@ const theme = createTheme({
     subtitle2: {
       fontSize: ThemeFonts.web.subtitle2 + `px`,
       fontWeight: 500,
-      lineHeight: "120%",
       "@media (min-width:961px) and (max-width:1280px)": {
         fontSize: ThemeFonts.webxs.subtitle2 + `px`
       },
@@ -439,8 +437,7 @@ const theme = createTheme({
     },
     body1: {
       fontSize: ThemeFonts.web.body1 + `px`,
-      fontWeight: "normal",
-      lineHeight: "120%",
+      fontWeight: "regular",
       "@media (min-width:961px) and (max-width:1280px)": {
         fontSize: ThemeFonts.webxs.body1 + `px`
       },
@@ -453,8 +450,7 @@ const theme = createTheme({
     },
     body2: {
       fontSize: ThemeFonts.web.body2 + `px`,
-      fontWeight: "normal",
-      lineHeight: "120%",
+      fontWeight: "regular",
       "@media (min-width:961px) and (max-width:1280px)": {
         fontSize: ThemeFonts.webxs.body2 + `px`
       },
@@ -465,8 +461,22 @@ const theme = createTheme({
         fontSize: ThemeFonts.mobilexs.body2 + `px`
       }
     },
+    // button: {
+    //     textTransform: "capitalize",
+    //     fontWeight: 500,
+    //     letterSpacing: "0.27px",
+    //     fontSize: ThemeFonts.web.button+`px`,
+    //     '@media (min-width:961px) and (max-width:1280px)': {
+    //         fontSize: ThemeFonts.webxs.button+`px`,
+    //     },
+    //     '@media (min-width:361px) and (max-width:960px)': {
+    //         fontSize: ThemeFonts.mobile.button+`px`,
+    //     },
+    //     '@media (max-width:360px)': {
+    //         fontSize: ThemeFonts.mobilexs.button+`px`,
+    //     },
+    // },
     caption: {
-      lineHeight: "120%",
       fontSize: ThemeFonts.mobile.caption + `px`,
       "@media (min-width:961px) and (max-width:1280px)": {
         fontSize: ThemeFonts.webxs.caption + `px`
@@ -479,9 +489,9 @@ const theme = createTheme({
       }
     },
     overline: {
-      lineHeight: "120%",
-      fontWeight: "normal",
+      fontWeight: "regular",
       textTransform: "inherit",
+      lineHeight: "140%",
       fontSize: ThemeFonts.web.overline + `px`,
       "@media (min-width:961px) and (max-width:1280px)": {
         fontSize: ThemeFonts.webxs.overline + `px`

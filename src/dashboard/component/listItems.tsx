@@ -14,44 +14,49 @@ export const mainListItems = (
       <ListItemText>Adquirente</ListItemText>
     </ListItem>
     <ListItem>
-    <ListItemButton component="a" href="#">
-      <ListItemText primary="Tipografías" />
-    </ListItemButton>
+      <ListItemButton component="a" href="#">
+        <ListItemText primary="Colores" />
+      </ListItemButton>
     </ListItem>
-<ListItem>
-    <ListItemButton component="a" href="#">
-      <ListItemText primary="Buttons" />
-    </ListItemButton>
+    <ListItem>
+      <ListItemButton component="a" href="#">
+        <ListItemText primary="Tipografías" />
+      </ListItemButton>
     </ListItem>
-<ListItem>
-    <ListItemButton component="a" href="#">
-      <ListItemText primary="Square Buttons" />
-    </ListItemButton>
+    <ListItem>
+        <ListItemButton component="a" href="#">
+          <ListItemText primary="Buttons" />
+        </ListItemButton>
     </ListItem>
-<ListItem>
-    <ListItemButton component="a" href="#">
-      <ListItemText primary="Controls" />
-    </ListItemButton>
+    <ListItem>
+      <ListItemButton component="a" href="#">
+        <ListItemText primary="Square Buttons" />
+      </ListItemButton>
     </ListItem>
-<ListItem>
-    <ListItemButton component="a" href="#">
-      <ListItemText primary="TextField" />
-    </ListItemButton>
+    <ListItem>
+        <ListItemButton component="a" href="#">
+          <ListItemText primary="Controls" />
+        </ListItemButton>
     </ListItem>
-<ListItem>
-    <ListItemButton component="a" href="#">
-      <ListItemText primary="TextField Select & ISO"></ListItemText>
-    </ListItemButton>
+    <ListItem>
+      <ListItemButton component="a" href="#">
+        <ListItemText primary="TextField" />
+      </ListItemButton>
     </ListItem>
-<ListItem>
-    <ListItemButton component="a" href="#">
-      <ListItemText primary="Icons"></ListItemText>
-    </ListItemButton>
+    <ListItem>
+      <ListItemButton component="a" href="#">
+        <ListItemText primary="TextField Select & ISO"></ListItemText>
+      </ListItemButton>
     </ListItem>
-<ListItem>    
-    <ListItemButton component="a" href="#">
-      <ListItemText primary="Data Display"></ListItemText>
-    </ListItemButton>
+    <ListItem>
+      <ListItemButton component="a" href="#">
+        <ListItemText primary="Icons"></ListItemText>
+      </ListItemButton>
+    </ListItem>
+    <ListItem>    
+      <ListItemButton component="a" href="#">
+        <ListItemText primary="Data Display"></ListItemText>
+      </ListItemButton>
     </ListItem>
   </div>
 );
