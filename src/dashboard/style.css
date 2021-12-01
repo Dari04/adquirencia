@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+}
 .SideBarNav .MuiPaper-root, .TopBarCollapse {
     background: #112B45!important;
     color: #FFFFFF;
@@ -5,11 +8,17 @@
 .TopBarCollapse .FontWeak{
     font-weight: lighter;
 }
-.TopBarCollapse .FontNormal{
-    font-weight: normal;
+.TopBarCollapse .Font600{
+    font-weight: 600;
 }
-.SideBarNav .MuiListItem a {
+.SideBarNav .MuiListItem-root a {
     color: #A8B8C9;
+    padding: 0px 8px 0px 8px;
+}
+.SideBarNav .MuiListItem-root a:hover,.SideBarNav .MuiListItem-root a:focus,.SideBarNav .MuiListItem-root a:active {
+    background: rgba(238, 246, 255, 0.2);
+    border-radius: 4px;
+    color: #FFFFFF;
 }
 .listDs,.listClient{
     padding-top: 0;
@@ -34,5 +43,5 @@
 .listClient span {
     margin-top: -15px;
     margin-bottom: -30px;
-    font-weight: 500;
+    font-weight: 600;
 }

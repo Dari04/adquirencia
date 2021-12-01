@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
-import "./style.css";
+import './style.css';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
@@ -10,7 +10,8 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
-import { mainListItems } from './dashboard_components/listItems';
+import { mainListItems } from './component/listItems';
+import Atoms from '../component/Atoms';
 
 function Copyright(props: any) {
   return (
@@ -110,7 +111,7 @@ function DashboardContent() {
               sx={{ flexGrow: 1 }}
             >
             <img src={process.env.PUBLIC_URL + "/img/logoIcon.svg"} style={{ verticalAlign: 'middle', marginRight: '10px' }}/>
-            <span className="FontWeak">Design System</span> - Kushki <span className="FontNormal">Adquirente</span>
+            <span className="FontWeak">Design System</span> - <span className="Font600">Kushki</span> Adquirente
             </Typography>
           </Toolbar>
         </AppBar>
@@ -152,6 +153,7 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Atoms />
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
