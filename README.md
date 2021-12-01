@@ -28,4 +28,3 @@ After this please checki if those packages are in package.json:
     "react-scripts": "latest",
     "typescript": "latest"
 ```
-or:
