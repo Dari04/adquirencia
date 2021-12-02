@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "dom"
     ],
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,10 +23,9 @@
   },
   "include": [
     "./src/**/*",
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "public/dashboard"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,5 +1,10 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
+    font-family: "IBM Plex Sans","Helvetica","Arial",sans-serif!important;
 }
 .SideBarNav .MuiPaper-root, .TopBarCollapse {
     background: #112B45!important;
@@ -44,4 +49,17 @@ body{
     margin-top: -15px;
     margin-bottom: -30px;
     font-weight: 600;
+}
+#colorPalette .MuiBox-root .MuiBox-root {
+    text-align: center;
+}
+
+.titleComponents{
+    background: #112B45;
+    border-radius: 4px;
+    color: #FFFFFF;
+    padding: 5px 10px 5px 10px;
+    width: fit-content;
+    font-size: 1.15em!important;
+    margin-bottom: 2rem!important;
 }

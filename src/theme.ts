@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import themeOptions from "./thememui5";
+import themeOptions from "./library/thememui5";
 
 const theme = createTheme({
   ...themeOptions,

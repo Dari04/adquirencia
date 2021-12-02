@@ -12,7 +12,7 @@ npm install
 npm run start
 ```
 
-After this please checki if those packages are in package.json:
+After this please check if those packages are in package.json:
 
 ```sh
     "@emotion/react": "latest",

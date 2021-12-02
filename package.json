@@ -1,26 +1,37 @@
 {
-  "name": "create-react-app-with-typescript",
+  "name": "design-system",
   "version": "5.0.0",
   "private": true,
+  "main": "src/index.tsx",
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
+    "@fontsource/ibm-plex-sans": "^4.5.1",
     "@mui/icons-material": "^5.2.0",
     "@mui/material": "^5.2.2",
-    "@mui/styles": "^5.2.2",
-    "@mui/system": "^5.2.2",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "eslint": "^7.32.0",
+    "lint": "^0.7.0",
     "react": "latest",
     "react-dom": "latest",
-    "react-scripts": "latest",
+    "react-scripts": "^4.0.3",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
     "typescript": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "react-scripts lint",
+    "lint:es": "eslint --ext .ts,.tsx .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx ."
   },
   "browserslist": {
     "production": [

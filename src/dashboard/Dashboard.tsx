@@ -10,8 +10,16 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
-import { mainListItems } from './component/listItems';
-import Atoms from '../component/Atoms';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Atoms from '../library/Atoms';
+
+/* 
+HI KUSHKI DEVELOPER
+THIS FOLDER CAN'T BE MODIFIED AND USED. THIS IS ONLY A 
+DASHBOARD TEMPLATE THAT SHOWS THE COMPONENTS THAT YOU ARE GOING TO USE.
+*/
 
 function Copyright(props: any) {
   return (
@@ -23,10 +31,7 @@ function Copyright(props: any) {
     </Typography>
   );
 }
-
-
 const drawerWidth: number = 240;
-
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
 }
@@ -137,22 +142,73 @@ function DashboardContent() {
               pb: [1],
             }}
           >
-            {mainListItems}</List>
+            <ListItem className="listDs">
+              <ListItemText>Design system</ListItemText>
+            </ListItem>
+            <ListItem className="listClient">
+              <ListItemText>Kushki</ListItemText>
+            </ListItem>
+            <ListItem className="listTitle">
+              <ListItemText>Adquirente</ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemButton component="a" href="#colorPalette">
+                <ListItemText primary="Paletas de color" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton component="a" href="#">
+                <ListItemText primary="Tipografías" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+                <ListItemButton component="a" href="#">
+                  <ListItemText primary="Buttons" />
+                </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton component="a" href="#">
+                <ListItemText primary="Square Buttons" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+                <ListItemButton component="a" href="#">
+                  <ListItemText primary="Controls" />
+                </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton component="a" href="#">
+                <ListItemText primary="TextField" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton component="a" href="#">
+                <ListItemText primary="TextField Select & ISO"></ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton component="a" href="#">
+                <ListItemText primary="Icons"></ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem>    
+              <ListItemButton component="a" href="#">
+                <ListItemText primary="Data Display"></ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </List>
         </Drawer>
         <Box
           component="main"
           sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
+            backgroundColor: '#FAFCFD',
             flexGrow: 1,
             height: '100vh',
             overflow: 'auto',
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
             <Atoms />
             <Copyright sx={{ pt: 4 }} />
           </Container>
