@@ -1,25 +1,19 @@
 import * as React from 'react'
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
-import './style.css';
+import * as styles from '@mui/material/styles';
+import { Container, Toolbar, Typography, Box, List, ListItem, ListItemButton, ListItemText, Link, IconButton,Collapse } from "@mui/material";
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import MuiDrawer from '@mui/material/Drawer';
-import Box from '@mui/material/Box';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import Atoms from '../library/Atoms';
+import theme from "../theme";
+import './style.css';
 
 /* 
 HI KUSHKI DEVELOPER
 THIS FOLDER CAN'T BE MODIFIED AND USED. THIS IS ONLY A 
 DASHBOARD TEMPLATE THAT SHOWS THE COMPONENTS THAT YOU ARE GOING TO USE.
 */
+
 
 function Copyright(props: any) {
   return (
@@ -31,12 +25,73 @@ function Copyright(props: any) {
     </Typography>
   );
 }
-const drawerWidth: number = 240;
+
+function MenuList() {
+  const [open, setOpen] = React.useState(true);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
+  return (
+    <List
+      sx={{ width: '100%' }}
+      component="nav"
+    >
+      <ListItemButton component="a" onClick={handleClick}>
+        <ListItemText primary="Paletas de color" />
+        <span>{!open ? <ExpandLess /> : <ExpandMore />}</span>
+      </ListItemButton>
+          <Collapse in={!open} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <ListItemButton component="a" href="#themeColors">
+                <ListItemText primary="Theme colors" />
+              </ListItemButton>
+              <ListItemButton component="a" href="#neutralColors">
+                <ListItemText primary="Neutrals" />
+              </ListItemButton>
+              <ListItemButton component="a" href="#typographyColors">
+                <ListItemText primary="Typography" />
+              </ListItemButton>
+              <ListItemButton component="a" href="#gradientColors">
+                <ListItemText primary="Gradients" />
+              </ListItemButton>
+            </List>
+          </Collapse>
+      <ListItemButton component="a" href="#typographyNav">
+        <ListItemText primary="Tipografías" />
+      </ListItemButton>
+        <ListItemButton component="a" href="#">
+          <ListItemText primary="Buttons" />
+        </ListItemButton>
+      <ListItemButton component="a" href="#">
+        <ListItemText primary="Square Buttons" />
+      </ListItemButton>
+        <ListItemButton component="a" href="#">
+          <ListItemText primary="Controls" />
+        </ListItemButton>
+      <ListItemButton component="a" href="#">
+        <ListItemText primary="TextField" />
+      </ListItemButton>
+      <ListItemButton component="a" href="#">
+        <ListItemText primary="TextField Select & ISO" />
+      </ListItemButton>
+      <ListItemButton component="a" href="#">
+        <ListItemText primary="Icons" />
+      </ListItemButton>  
+      <ListItemButton component="a" href="#">
+        <ListItemText primary="Data Display" />
+      </ListItemButton>
+    </List>
+  );
+}
+
+const drawerWidth: number = 250;
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
 }
 
-const AppBar = styled(MuiAppBar, {
+const AppBar = styles.styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })<AppBarProps>(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
@@ -54,7 +109,7 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+const Drawer = styles.styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     '& .MuiDrawer-paper': {
       position: 'relative',
@@ -77,7 +132,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const mdTheme = createTheme();
 
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
@@ -86,7 +140,7 @@ function DashboardContent() {
   };
 
   return (
-    <ThemeProvider theme={mdTheme}>
+    <styles.ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
         <AppBar className="TopBarCollapse" position="absolute" open={open}
         sx={{
@@ -116,7 +170,7 @@ function DashboardContent() {
               sx={{ flexGrow: 1 }}
             >
             <img src={process.env.PUBLIC_URL + "/img/logoIcon.svg"} style={{ verticalAlign: 'middle', marginRight: '10px' }}/>
-            <span className="FontWeak">Design System</span> - <span className="Font600">Kushki</span> Adquirente
+            <span className="FontWeak">Design System</span> - <span className="Font600">Kushki</span> <span className="Font400">Adquirente</span>
             </Typography>
           </Toolbar>
         </AppBar>
@@ -134,8 +188,7 @@ function DashboardContent() {
             <IconButton onClick={toggleDrawer}>
             <img src={process.env.PUBLIC_URL + "/img/arrowLeft.svg"}  width={25} height={25} />
             </IconButton>
-          </Toolbar>
-          
+          </Toolbar>  
           <List
           sx={{
               px: [1],
@@ -151,52 +204,8 @@ function DashboardContent() {
             <ListItem className="listTitle">
               <ListItemText>Adquirente</ListItemText>
             </ListItem>
-            <ListItem>
-              <ListItemButton component="a" href="#colorPalette">
-                <ListItemText primary="Paletas de color" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem>
-              <ListItemButton component="a" href="#">
-                <ListItemText primary="Tipografías" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem>
-                <ListItemButton component="a" href="#">
-                  <ListItemText primary="Buttons" />
-                </ListItemButton>
-            </ListItem>
-            <ListItem>
-              <ListItemButton component="a" href="#">
-                <ListItemText primary="Square Buttons" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem>
-                <ListItemButton component="a" href="#">
-                  <ListItemText primary="Controls" />
-                </ListItemButton>
-            </ListItem>
-            <ListItem>
-              <ListItemButton component="a" href="#">
-                <ListItemText primary="TextField" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem>
-              <ListItemButton component="a" href="#">
-                <ListItemText primary="TextField Select & ISO"></ListItemText>
-              </ListItemButton>
-            </ListItem>
-            <ListItem>
-              <ListItemButton component="a" href="#">
-                <ListItemText primary="Icons"></ListItemText>
-              </ListItemButton>
-            </ListItem>
-            <ListItem>    
-              <ListItemButton component="a" href="#">
-                <ListItemText primary="Data Display"></ListItemText>
-              </ListItemButton>
-            </ListItem>
-          </List>
+          </List> 
+          <MenuList />   
         </Drawer>
         <Box
           component="main"
@@ -214,7 +223,7 @@ function DashboardContent() {
           </Container>
         </Box>
       </Box>
-    </ThemeProvider>
+    </styles.ThemeProvider>
   );
 }
 
