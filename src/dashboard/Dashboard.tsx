@@ -61,7 +61,7 @@ function MenuList() {
       <ListItemButton component="a" href="#typographyNav">
         <ListItemText primary="Tipografías" />
       </ListItemButton>
-        <ListItemButton component="a" href="#">
+        <ListItemButton component="a" href="#buttonNav">
           <ListItemText primary="Buttons" />
         </ListItemButton>
       <ListItemButton component="a" href="#">

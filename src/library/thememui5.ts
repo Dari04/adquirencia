@@ -522,7 +522,6 @@ const theme = createTheme({
         disableElevation: true
       },
       styleOverrides: {
-        //@ts-ignore
         root: {
           padding: "12px 30px",
           height: "44px",
@@ -540,6 +539,89 @@ const theme = createTheme({
           },
           [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
             fontSize: ThemeFonts.screensm.button + `px`
+          },
+        },
+        contained: {
+          "&.error": {
+            backgroundColor: Palette.neutral[50],
+            border: `1px solid ` + Palette.error.light3,
+            color: Palette.error.main,
+            "&:hover": {
+              backgroundColor: Palette.error.light3,
+              border: `1px solid ` + Palette.error.light3,
+              color: Palette.error.main,
+            },
+            "&:focus, &:active": {
+              backgroundColor: Palette.error.light3,
+              border: `1px solid ` + Palette.error.light,
+              color: Palette.error.main,
+            },
+            "&:disabled": {
+              backgroundColor: Palette.neutral[50],
+              border: `1px solid ` + Palette.error.light2,
+              color: Palette.error.light2,
+              opacity: "35%",
+            }
+          }     
+        },
+        containedPrimary: {
+          border: `1px solid ` + Palette.primary.components.light.default,
+          backgroundColor: Palette.primary.components.light.default,
+          "&:hover": {
+            color: Palette.neutral[50],
+            backgroundColor: Palette.primary.components.light.hover,
+            border: `1px solid ` + Palette.primary.components.light.hover
+          },
+          "&:focus, &:active": {
+            backgroundColor: Palette.primary.components.light.focus,
+            border: `1px solid ` + Palette.primary.components.light.focus,
+            color: Palette.neutral[50]
+          },
+          "&:disabled": {
+            backgroundColor: Palette.primary.components.light.disable,
+            border: `1px solid ` + Palette.primary.components.light.disable,
+            color: Palette.neutral[50],
+          }
+        },
+        containedSecondary: {
+          backgroundColor: Palette.neutral[50],
+          border: `1px solid ` + Palette.neutral[50],
+          color: Palette.text.grey,
+          "&:hover": {
+            backgroundColor: Palette.neutral[100],
+            border: `1px solid ` + Palette.neutral[100],
+            color: Palette.text.grey
+          },
+          "&:focus, &:active": {
+            backgroundColor: Palette.neutral[100],
+            border: `1px solid ` + Palette.neutral[100] + "!important",
+            color: Palette.text.primary
+          },
+          "&:disabled": {
+            backgroundColor: Palette.neutral[100],
+            border: `1px solid ` + Palette.neutral[100] + "!important",
+            color: Palette.neutral[500]
+          }
+        },
+        textPrimary: {
+          backgroundColor: Palette.neutral[50],
+          border: `1px solid ` + Palette.neutral[50],
+          color: Palette.primary.light2,
+          "&:hover": {
+            backgroundColor: Palette.neutral[50],
+            border: `1px solid ` + Palette.neutral[50],
+            color: Palette.primary.light2,
+          },
+          "&:focus, &:active": {
+            backgroundColor: Palette.neutral[50],
+            border: `1px solid ` + Palette.neutral[50],
+            color: Palette.text.grey,
+          },
+          "&:disabled": {
+            backgroundColor: Palette.neutral[50],
+            border: `1px solid ` + Palette.neutral[500],
+            color: Palette.text.grey,
+            opacity: "35%"
           }
         },
         sizeLarge: {
@@ -570,55 +652,6 @@ const theme = createTheme({
             fontSize: ThemeFonts.screensm.buttonsm + `px`
           }
         },
-        //@ts-ignore
-        containedPrimary: {
-          border: `1px solid ` + Palette.primary.components.light.default,
-          backgroundColor: Palette.primary.components.light.default,
-          "&:hover": {
-            color: Palette.neutral[50],
-            backgroundColor: Palette.primary.components.light.hover,
-            border: `1px solid ` + Palette.primary.components.light.hover
-          },
-          "&:focus": {
-            backgroundColor: Palette.primary.components.light.focus,
-            border: `1px solid ` + Palette.primary.components.light.focus,
-            color: Palette.neutral[50]
-          },
-          "&:active": {
-            backgroundColor: Palette.primary.components.light.default,
-            border: `1px solid ` + Palette.primary.components.light.default,
-            color: Palette.neutral[50]
-          },
-          "&:disabled": {
-            backgroundColor: Palette.primary.components.light.disable,
-            border: `1px solid ` + Palette.primary.components.light.disable,
-            color: Palette.neutral[50],
-          }
-        },
-        //@ts-ignore
-        containedSecondary: {
-          backgroundColor: Palette.neutral[50],
-          border: `1px solid ` + Palette.neutral[50],
-          color: Palette.text.grey,
-          "&:hover": {
-            backgroundColor: Palette.neutral[100],
-            border: `1px solid ` + Palette.neutral[100],
-            color: Palette.text.grey
-          },
-          "&:focus": {
-            backgroundColor: Palette.neutral[100],
-            border: `1px solid ` + Palette.neutral[100] + "!important",
-            color: Palette.text.primary
-          },
-          "&:active": {
-            border: `1px solid ` + Palette.primary.light3
-          },
-          "&:disabled": {
-            backgroundColor: Palette.neutral[100],
-            border: `1px solid ` + Palette.neutral[100] + "!important",
-            color: Palette.neutral[500]
-          }
-        }
       }
     },
   },

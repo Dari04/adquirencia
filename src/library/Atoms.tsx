@@ -1142,13 +1142,13 @@ const Atoms: React.FC = () => {
       </Grid>
       <Grid container spacing={2} alignItems="center">
         {/* ----------------  START BUTTONS  ---------------- */}
-        <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="typographyNav">
+        <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="buttonNav">
           <Typography className="titleComponents">
           Buttons - Button Text
           </Typography>
           {/* --- Start Button Primary --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
-              Primary button - Small
+              Primary button
           </Typography>
           <Grid container spacing={3}>
               <Grid item md={4} sm={12}>
@@ -1183,9 +1183,6 @@ const Atoms: React.FC = () => {
                 </Box>
               </Grid>
           </Grid>
-          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
-              Primary button - Medium
-          </Typography>
           <Grid container spacing={3}>
               <Grid item md={4} sm={12}>
                 <Box mt={2}>
@@ -1217,9 +1214,6 @@ const Atoms: React.FC = () => {
                 </Box>
               </Grid>
           </Grid>
-          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
-              Primary button - Large
-          </Typography>
           <Grid container spacing={3}>
               <Grid item md={4} sm={12}>
                 <Box mt={2}>
@@ -1254,7 +1248,7 @@ const Atoms: React.FC = () => {
           {/* --- Finish Button Primary --- */}
           {/* --- Start Button Secondary --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
-              Secondary button - Small
+              Secondary button
           </Typography>
           <Grid container spacing={3}>
               <Grid item md={4} sm={12}>
@@ -1289,9 +1283,6 @@ const Atoms: React.FC = () => {
                 </Box>
               </Grid>
           </Grid>
-          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
-              Secondary button - Medium
-          </Typography>
           <Grid container spacing={3}>
               <Grid item md={4} sm={12}>
                 <Box mt={2}>
@@ -1323,9 +1314,6 @@ const Atoms: React.FC = () => {
                 </Box>
               </Grid>
           </Grid>
-          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
-              Secondary button - Large
-          </Typography>
           <Grid container spacing={3}>
               <Grid item md={4} sm={12}>
                 <Box mt={2}>
@@ -1358,6 +1346,203 @@ const Atoms: React.FC = () => {
               </Grid>
           </Grid>
           {/* --- Finish Button Secondary --- */}
+          {/* --- Start Button Error --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+              Error button
+          </Typography>
+          <Grid container spacing={3}>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    size="small"
+                    startIcon={<AddIcon />}
+                    variant="contained"
+                    className="error"
+                  >
+                    Nuevo Botón S
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button size="small" variant="contained" className="error">
+                    Nuevo Botón S
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    size="small"
+                    disabled
+                    variant="contained"
+                    className="error"
+                  >
+                    Nuevo Botón S
+                  </Button>
+                </Box>
+              </Grid>
+          </Grid>
+          <Grid container spacing={3}>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    startIcon={<AddIcon />}
+                    variant="contained"
+                    className="error"
+                  >
+                    Nuevo Botón M
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button variant="contained" className="error">
+                    Nuevo Botón M
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    disabled
+                    variant="contained"
+                    className="error"
+                  >
+                    Nuevo Botón M
+                  </Button>
+                </Box>
+              </Grid>
+          </Grid>
+          <Grid container spacing={3}>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    startIcon={<AddIcon />}
+                    variant="contained"
+                    className="error" size="large"
+                  >
+                    Nuevo Botón L
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button variant="contained" className="error" size="large">
+                    Nuevo Botón L
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    disabled
+                    variant="contained"
+                    className="error" size="large"
+                  >
+                    Nuevo Botón L
+                  </Button>
+                </Box>
+              </Grid>
+          </Grid>
+          {/* --- Finish Button Error --- */}
+          {/* --- Start Button Text--- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+              Text button
+          </Typography>
+          <Grid container spacing={3}>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    size="small"
+                    startIcon={<AddIcon />}
+                    variant="text"
+                  >
+                    Nuevo Botón S
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button size="small" variant="text">
+                    Nuevo Botón S
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    size="small"
+                    disabled
+                    variant="text"
+                  >
+                    Nuevo Botón S
+                  </Button>
+                </Box>
+              </Grid>
+          </Grid>
+          <Grid container spacing={3}>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    startIcon={<AddIcon />}
+                    variant="text"
+                  >
+                    Nuevo Botón M
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button variant="text">
+                    Nuevo Botón M
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    disabled
+                    variant="text"
+                  >
+                    Nuevo Botón M
+                  </Button>
+                </Box>
+              </Grid>
+          </Grid>
+          <Grid container spacing={3}>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    startIcon={<AddIcon />}
+                    variant="text"
+                    size="large"
+                  >
+                    Nuevo Botón L
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button variant="text"
+                  size="large">
+                    Nuevo Botón L
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    disabled
+                    variant="text"
+                    size="large"
+                  >
+                    Nuevo Botón L
+                  </Button>
+                </Box>
+              </Grid>
+          </Grid>
+          {/* --- Finish Button Text--- */}
         </Grid>
         {/* ----------------  FINISH BUTTONS  ---------------- */}
       </Grid>

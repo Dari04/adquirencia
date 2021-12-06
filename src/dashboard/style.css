@@ -104,3 +104,13 @@ body{
     color: #112B45!important;
     font-weight: 400!important;
 }
+.MuiContainer-maxWidthXl #buttonNav .MuiGrid-container {
+    margin-bottom: 2rem;
+}
+#buttonNav .css-1b6hymy-MuiTypography-root {
+    margin-top: 5rem;
+}
+
+#buttonNav .css-1b6hymy-MuiTypography-root:first-of-type {
+    margin-top: 0;
+}
