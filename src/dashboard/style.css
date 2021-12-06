@@ -99,3 +99,8 @@ body{
 
 .css-vkq2m7-MuiTypography-root {
     font-size: 15px!important;}
+
+.css-1b6hymy-MuiTypography-root, .css-a57mgm-MuiTypography-root {
+    color: #112B45!important;
+    font-weight: 400!important;
+}

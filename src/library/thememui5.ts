@@ -9,7 +9,15 @@ const Palette = {
         main: "#023365",
         light: "#1E65AE",
         light2: "#4498EE",
-        light3: "#EEF6FF"
+        light3: "#EEF6FF",
+        components: {
+          light: {
+            default: "#4499EE",
+            hover: "#3879CD",
+            focus: "#3F8BE0",
+            disable: "#BFDFFA",
+          },
+        },
     },
     secondary: {
       dark2: "#3B9D86",
@@ -197,7 +205,16 @@ const theme = createTheme({
       main: Palette.primary.main,
       light: Palette.primary.light,
       light2: Palette.primary.light2,
-      light3: Palette.primary.light3
+      light3: Palette.primary.light3,
+      components: {
+        light: {
+          default: Palette.primary.components.light.default,
+          hover: Palette.primary.components.light.hover,
+           //@ts-ignore
+          focus: Palette.primary.components.light.focus,
+          disable: Palette.primary.components.light.disable,
+        },
+      },
     },
     secondary: {
       //@ts-ignore
@@ -555,50 +572,51 @@ const theme = createTheme({
         },
         //@ts-ignore
         containedPrimary: {
-          border: `1px solid ` + Palette.primary.light2,
-          backgroundColor: Palette.primary.light2,
+          border: `1px solid ` + Palette.primary.components.light.default,
+          backgroundColor: Palette.primary.components.light.default,
           "&:hover": {
             color: Palette.neutral[50],
-            backgroundColor: Palette.primary.light,
-            border: `1px solid ` + Palette.primary.light
+            backgroundColor: Palette.primary.components.light.hover,
+            border: `1px solid ` + Palette.primary.components.light.hover
           },
           "&:focus": {
-            backgroundColor: Palette.primary.light,
-            border: `1px solid ` + Palette.primary.light,
+            backgroundColor: Palette.primary.components.light.focus,
+            border: `1px solid ` + Palette.primary.components.light.focus,
             color: Palette.neutral[50]
           },
           "&:active": {
-            backgroundColor: Palette.primary.light,
-            border: `1px solid ` + Palette.primary.light,
+            backgroundColor: Palette.primary.components.light.default,
+            border: `1px solid ` + Palette.primary.components.light.default,
             color: Palette.neutral[50]
           },
           "&:disabled": {
-            backgroundColor: Palette.primary.light2,
-            border: `1px solid ` + Palette.primary.light2,
+            backgroundColor: Palette.primary.components.light.disable,
+            border: `1px solid ` + Palette.primary.components.light.disable,
             color: Palette.neutral[50],
-            opacity: "30%"
           }
         },
         //@ts-ignore
         containedSecondary: {
-          backgroundColor: Palette.primary.main + "!important",
-          border: `1px solid ` + Palette.primary.main,
-          color: Palette.neutral[50],
+          backgroundColor: Palette.neutral[50],
+          border: `1px solid ` + Palette.neutral[50],
+          color: Palette.text.grey,
           "&:hover": {
-            backgroundColor: Palette.neutral[50] + "!important",
+            backgroundColor: Palette.neutral[100],
+            border: `1px solid ` + Palette.neutral[100],
             color: Palette.text.grey
           },
           "&:focus": {
-            border: `1px solid ` + Palette.primary.light2
+            backgroundColor: Palette.neutral[100],
+            border: `1px solid ` + Palette.neutral[100] + "!important",
+            color: Palette.text.primary
           },
           "&:active": {
             border: `1px solid ` + Palette.primary.light3
           },
           "&:disabled": {
-            backgroundColor: Palette.neutral[500] + "!important",
-            border: `1px solid ` + Palette.neutral[500],
-            color: Palette.text.dark,
-            opacity: "30%"
+            backgroundColor: Palette.neutral[100],
+            border: `1px solid ` + Palette.neutral[100] + "!important",
+            color: Palette.neutral[500]
           }
         }
       }

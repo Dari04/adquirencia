@@ -110,6 +110,66 @@ const Atoms: React.FC = () => {
               </Box>
             </Box>
           </Box>
+          <Typography variant="h3" component="div" sx={{ pb: "10px" }}>
+            Primary Components
+          </Typography>
+          <Typography variant="body1" component="div" sx={{ pb: "30px" }}>
+            Primary light state for general use.
+          </Typography>
+          <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={0} alignItems="center" mb={15}>
+            <Box gridColumn="span 3">
+              <Box>
+                <Box
+                  bgcolor="primary.components.light.default" height="300px" py={3} px={3} mb={1}>
+                </Box>
+                <Typography variant="h5">
+                  primary.components.<br/>light.default
+                </Typography>
+                <Typography variant="body2">
+                    #4499EE<br />rgba(68, 153, 238, 1)
+                </Typography>
+              </Box>
+            </Box>
+            <Box gridColumn="span 3">
+              <Box>
+                <Box
+                  bgcolor="primary.components.light.hover" height="300px" py={3} px={3} mb={1}>
+                </Box>
+                <Typography variant="h5">
+                  primary.components.<br/>light.hover
+                </Typography>
+                <Typography variant="body2">
+                  #3879CD<br />rgba(56, 121, 205, 1)
+                </Typography>
+              </Box>
+            </Box>
+            <Box gridColumn="span 3">
+              <Box>
+                <Box
+                  bgcolor="primary.components.light.focus" height="300px" py={3} px={3} mb={1}>
+                </Box>
+                <Typography variant="h5">
+                  primary.components.<br/>light.focus
+                </Typography>
+                <Typography variant="body2">
+                  #3F8BE0<br />rgba(63, 139, 224, 1)
+                </Typography>
+              </Box>
+            </Box>
+            <Box gridColumn="span 3">
+              <Box>
+                <Box
+                  bgcolor="primary.components.light.disable" height="300px" py={3} px={3} mb={1}>
+                </Box>
+                <Typography variant="h5">
+                  primary.components.<br/>light.disable
+                </Typography>
+                <Typography variant="body2">
+                    #BFDFFA<br />rgba(191, 223, 250, 1)
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
           {/* --- Finish Color Primary --- */}
           {/* --- Start Color Secondary --- */}
           <Typography variant="h3" component="div" sx={{ pb: "10px" }}>
@@ -1192,6 +1252,112 @@ const Atoms: React.FC = () => {
               </Grid>
           </Grid>
           {/* --- Finish Button Primary --- */}
+          {/* --- Start Button Secondary --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+              Secondary button - Small
+          </Typography>
+          <Grid container spacing={3}>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    size="small"
+                    startIcon={<AddIcon />}
+                    variant="contained"
+                    color="secondary"
+                  >
+                    Nuevo Botón S
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button size="small" variant="contained" color="secondary">
+                    Nuevo Botón S
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    size="small"
+                    disabled
+                    variant="contained"
+                    color="secondary"
+                  >
+                    Nuevo Botón S
+                  </Button>
+                </Box>
+              </Grid>
+          </Grid>
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+              Secondary button - Medium
+          </Typography>
+          <Grid container spacing={3}>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    startIcon={<AddIcon />}
+                    variant="contained"
+                    color="secondary"
+                  >
+                    Nuevo Botón M
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button variant="contained" color="secondary">
+                    Nuevo Botón M
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    disabled
+                    variant="contained"
+                    color="secondary"
+                  >
+                    Nuevo Botón M
+                  </Button>
+                </Box>
+              </Grid>
+          </Grid>
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+              Secondary button - Large
+          </Typography>
+          <Grid container spacing={3}>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    startIcon={<AddIcon />}
+                    variant="contained"
+                    color="secondary" size="large"
+                  >
+                    Nuevo Botón L
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button variant="contained" color="secondary" size="large">
+                    Nuevo Botón L
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <Button
+                    disabled
+                    variant="contained"
+                    color="secondary" size="large"
+                  >
+                    Nuevo Botón L
+                  </Button>
+                </Box>
+              </Grid>
+          </Grid>
+          {/* --- Finish Button Secondary --- */}
         </Grid>
         {/* ----------------  FINISH BUTTONS  ---------------- */}
       </Grid>
