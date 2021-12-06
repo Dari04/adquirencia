@@ -1357,7 +1357,7 @@ const Atoms: React.FC = () => {
                     size="small"
                     startIcon={<AddIcon />}
                     variant="contained"
-                    className="error"
+                    color="error"
                   >
                     Nuevo Botón S
                   </Button>
@@ -1365,7 +1365,7 @@ const Atoms: React.FC = () => {
               </Grid>
               <Grid item md={4} sm={12}>
                 <Box mt={2}>
-                  <Button size="small" variant="contained" className="error">
+                  <Button size="small" variant="contained" color="error">
                     Nuevo Botón S
                   </Button>
                 </Box>
@@ -1376,7 +1376,7 @@ const Atoms: React.FC = () => {
                     size="small"
                     disabled
                     variant="contained"
-                    className="error"
+                    color="error"
                   >
                     Nuevo Botón S
                   </Button>
@@ -1389,7 +1389,7 @@ const Atoms: React.FC = () => {
                   <Button
                     startIcon={<AddIcon />}
                     variant="contained"
-                    className="error"
+                    color="error"
                   >
                     Nuevo Botón M
                   </Button>
@@ -1397,7 +1397,7 @@ const Atoms: React.FC = () => {
               </Grid>
               <Grid item md={4} sm={12}>
                 <Box mt={2}>
-                  <Button variant="contained" className="error">
+                  <Button variant="contained" color="error">
                     Nuevo Botón M
                   </Button>
                 </Box>
@@ -1407,7 +1407,7 @@ const Atoms: React.FC = () => {
                   <Button
                     disabled
                     variant="contained"
-                    className="error"
+                    color="error"
                   >
                     Nuevo Botón M
                   </Button>
@@ -1420,7 +1420,7 @@ const Atoms: React.FC = () => {
                   <Button
                     startIcon={<AddIcon />}
                     variant="contained"
-                    className="error" size="large"
+                    color="error" size="large"
                   >
                     Nuevo Botón L
                   </Button>
@@ -1428,7 +1428,7 @@ const Atoms: React.FC = () => {
               </Grid>
               <Grid item md={4} sm={12}>
                 <Box mt={2}>
-                  <Button variant="contained" className="error" size="large">
+                  <Button variant="contained" color="error" size="large">
                     Nuevo Botón L
                   </Button>
                 </Box>
@@ -1438,7 +1438,7 @@ const Atoms: React.FC = () => {
                   <Button
                     disabled
                     variant="contained"
-                    className="error" size="large"
+                    color="error" size="large"
                   >
                     Nuevo Botón L
                   </Button>

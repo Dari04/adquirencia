@@ -24,7 +24,8 @@
   "include": [
     "./src/**/*",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "/**/*.d.ts"
 , "public/dashboard"  ],
   "exclude": [
     "node_modules"

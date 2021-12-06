@@ -1,4 +1,4 @@
-import { MoveDown } from "@mui/icons-material";
+import Button from '@mui/material/Button';
 import { createTheme } from "@mui/material/styles";
 
 
@@ -541,47 +541,55 @@ const theme = createTheme({
             fontSize: ThemeFonts.screensm.button + `px`
           },
         },
-        contained: {
-          "&.error": {
-            backgroundColor: Palette.neutral[50],
-            border: `1px solid ` + Palette.error.light3,
-            color: Palette.error.main,
-            "&:hover": {
-              backgroundColor: Palette.error.light3,
-              border: `1px solid ` + Palette.error.light3,
-              color: Palette.error.main,
-            },
-            "&:focus, &:active": {
-              backgroundColor: Palette.error.light3,
-              border: `1px solid ` + Palette.error.light,
-              color: Palette.error.main,
-            },
-            "&:disabled": {
-              backgroundColor: Palette.neutral[50],
-              border: `1px solid ` + Palette.error.light2,
-              color: Palette.error.light2,
-              opacity: "35%",
-            }
-          }     
+        sizeLarge: {
+          height: "52px",
+          padding: "12px 30px",
+          fontSize: ThemeFonts.screenxl.buttonlg + `px`,
+          [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+            fontSize: ThemeFonts.screenlg.buttonlg + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+            fontSize: ThemeFonts.screenmd.buttonlg + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+            fontSize: ThemeFonts.screensm.buttonlg + `px`
+          }
+        },
+        sizeSmall: {
+          height: "36px",
+          padding: "8px 30px",
+          fontSize: ThemeFonts.screenxl.buttonsm + `px`,
+          [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+            fontSize: ThemeFonts.screenlg.buttonsm + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+            fontSize: ThemeFonts.screenmd.buttonsm + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+            fontSize: ThemeFonts.screensm.buttonsm + `px`
+          }
         },
         containedPrimary: {
           border: `1px solid ` + Palette.primary.components.light.default,
           backgroundColor: Palette.primary.components.light.default,
+          boxShadow: "0px 51px 80px rgba(106, 167, 197, 0.07), 0px 33.0556px 46.8519px rgba(106, 167, 197, 0.0531481), 0px 19.6444px 25.4815px rgba(106, 167, 197, 0.0425185), 0px 10.2px 13px rgba(106, 167, 197, 0.035), 0px 4.15556px 6.51852px rgba(106, 167, 197, 0.0274815), 0px 0.944444px 3.14815px rgba(106, 167, 197, 0.0168519)",
           "&:hover": {
             color: Palette.neutral[50],
             backgroundColor: Palette.primary.components.light.hover,
-            border: `1px solid ` + Palette.primary.components.light.hover
+            border: `1px solid ` + Palette.primary.components.light.hover,
+            boxShadow: "0px 36px 65px rgba(106, 167, 197, 0.16), 0px 18.225px 28.3359px rgba(106, 167, 197, 0.12), 0px 7.2px 10.5625px rgba(106, 167, 197, 0.08), 0px 1.575px 3.75781px rgba(106, 167, 197, 0.03)",
           },
           "&:focus, &:active": {
             backgroundColor: Palette.primary.components.light.focus,
             border: `1px solid ` + Palette.primary.components.light.focus,
-            color: Palette.neutral[50]
+            color: Palette.neutral[50],
+            boxShadow: "0px 8px 17px rgba(106, 167, 197, 0.15), 0px 1.6px 2.7625px rgba(106, 167, 197, 0.075)",
           },
           "&:disabled": {
             backgroundColor: Palette.primary.components.light.disable,
             border: `1px solid ` + Palette.primary.components.light.disable,
             color: Palette.neutral[50],
-          }
+          },
         },
         containedSecondary: {
           backgroundColor: Palette.neutral[50],
@@ -611,11 +619,13 @@ const theme = createTheme({
             backgroundColor: Palette.neutral[50],
             border: `1px solid ` + Palette.neutral[50],
             color: Palette.primary.light2,
+            boxShadow: "0px 10px 80px rgba(106, 167, 197, 0.1), 0px 5.0625px 34.875px rgba(106, 167, 197, 0.05), 0px 2px 13px rgba(106, 167, 197, 0.03), 0px 0.4375px 4.625px rgba(106, 167, 197, 0.02)",
           },
           "&:focus, &:active": {
             backgroundColor: Palette.neutral[50],
             border: `1px solid ` + Palette.neutral[50],
             color: Palette.text.grey,
+            boxShadow: "0px 10px 80px rgba(106, 167, 197, 0.1), 0px 5.0625px 34.875px rgba(106, 167, 197, 0.05), 0px 2px 13px rgba(106, 167, 197, 0.03), 0px 0.4375px 4.625px rgba(106, 167, 197, 0.02)",
           },
           "&:disabled": {
             backgroundColor: Palette.neutral[50],
@@ -623,41 +633,39 @@ const theme = createTheme({
             color: Palette.text.grey,
             opacity: "35%"
           }
+        }
+      },
+      variants: [
+        {
+          props: { variant: 'contained', color: 'error' },
+          style: {
+            backgroundColor: Palette.neutral[50],
+            border: `1px solid ` + Palette.error.light3,
+            color: Palette.error.main,
+            "&:hover": {
+              backgroundColor: Palette.error.light3,
+              border: `1px solid ` + Palette.error.light3,
+              color: Palette.error.main,
+              boxShadow: "0px 10px 80px rgba(106, 167, 197, 0.1), 0px 5.0625px 34.875px rgba(106, 167, 197, 0.05), 0px 2px 13px rgba(106, 167, 197, 0.03), 0px 0.4375px 4.625px rgba(106, 167, 197, 0.02)",
+            },
+            "&:focus, &:active": {
+              backgroundColor: Palette.error.light3,
+              border: `1px solid ` + Palette.error.light,
+              color: Palette.error.main,
+              boxShadow:"none",
+            },
+            "&:disabled": {
+              backgroundColor: Palette.neutral[50],
+              border: `1px solid ` + Palette.error.light2,
+              color: Palette.error.light2,
+              opacity: "35%",
+            }
+          },
         },
-        sizeLarge: {
-          height: "52px",
-          padding: "12px 30px",
-          fontSize: ThemeFonts.screenxl.buttonlg + `px`,
-          [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
-            fontSize: ThemeFonts.screenlg.buttonlg + `px`
-          },
-          [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-            fontSize: ThemeFonts.screenmd.buttonlg + `px`
-          },
-          [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
-            fontSize: ThemeFonts.screensm.buttonlg + `px`
-          }
-        },
-        sizeSmall: {
-          height: "36px",
-          padding: "8px 30px",
-          fontSize: ThemeFonts.screenxl.buttonsm + `px`,
-          [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
-            fontSize: ThemeFonts.screenlg.buttonsm + `px`
-          },
-          [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-            fontSize: ThemeFonts.screenmd.buttonsm + `px`
-          },
-          [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
-            fontSize: ThemeFonts.screensm.buttonsm + `px`
-          }
-        },
-      }
+      ],
     },
   },
 });
-
-
 
 
 
