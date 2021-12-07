@@ -22,10 +22,11 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "./src/**/*",
     "**/*.ts",
     "**/*.tsx",
-    "/**/*.d.ts"
+    "/**/*.d.ts",
+    "**/*.svg",
+    "*.svg"
 , "public/dashboard"  ],
   "exclude": [
     "node_modules"

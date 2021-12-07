@@ -114,3 +114,7 @@ body{
 #buttonNav .css-1b6hymy-MuiTypography-root:first-of-type {
     margin-top: 0;
 }
+.css-105auzw-MuiButtonBase-root-MuiButton-root {
+    color: #0DC298!important;
+    border-color: #0DC298!important;
+}

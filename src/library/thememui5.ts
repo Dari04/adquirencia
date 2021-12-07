@@ -1,4 +1,5 @@
-import Button from '@mui/material/Button';
+import Skeleton from '@mui/material/Skeleton';
+import Typography, { TypographyProps } from '@mui/material/Typography';
 import { createTheme } from "@mui/material/styles";
 
 
@@ -111,7 +112,8 @@ const ThemeFonts = {
     inputText: 16,
     helperText: 12,
     tooltip: 14,
-    avatarLetter: 20
+    avatarLetter: 20,
+    chip: 14,
   },
   screenlg: {
     h1: 38,
@@ -133,8 +135,9 @@ const ThemeFonts = {
     inputLabel: 12,
     inputText: 16,
     helperText: 12,
-    tooltip: 13,
-    avatarLetter: 18
+    tooltip: 14,
+    avatarLetter: 18,
+    chip: 14,
   },
   screenmd: {
     h1: 28,
@@ -156,8 +159,9 @@ const ThemeFonts = {
     inputLabel: 11,
     inputText: 14,
     helperText: 11,
-    tooltip: 12,
-    avatarLetter: 16
+    tooltip: 13,
+    avatarLetter: 16,
+    chip: 14,
   },
   screensm: {
     h1: 23,
@@ -180,7 +184,8 @@ const ThemeFonts = {
     inputText: 14,
     helperText: 11,
     tooltip: 12,
-    avatarLetter: 16
+    avatarLetter: 16,
+    chip: 14,
   }
 };
 
@@ -193,7 +198,6 @@ const breakpoints = {
     xl: 1600
   }
 };
-
 
 const theme = createTheme({
   spacing: 8,
@@ -663,6 +667,125 @@ const theme = createTheme({
           },
         },
       ],
+    },
+    MuiAlert: {
+      styleOverrides: {
+        root: {
+          borderRadius: "0px 0px 16px 16px;",
+          fontSize: ThemeFonts.screenxl.tooltip + `px`,
+          color: Palette.text.white,
+          padding: "8px 16px",
+          fontWeight: "normal",
+          lineHeight: "144%",
+          boxShadow: "none",
+          ".MuiAlert-message": {
+            width: "100%",
+            justifyContent: "space-between",
+            display: "flex",
+            a: {
+              fontSize:"13px",
+              letterSpacing: "0.01em",
+              margin: "0px 16px",
+              color:"currentColor",
+            }
+          },
+          ".MuiAlert-action":{
+            padding: "0px",
+            marginRight: "0px",
+            alignItems: "center",
+            svg: {
+              fontSize: "0.9em",
+              stroke: "currentColor",
+            },
+          },
+        },
+        filledSuccess: {
+          backgroundColor: Palette.primary.components.light.disable,
+          color: Palette.text.primary,
+        },
+        filledError: {
+          color: Palette.error.dark2,
+          backgroundColor: Palette.error.light3
+        },
+        /*filledWarning: {
+          backgroundColor: Palette.warning.light2
+        },
+        filledInfo: {
+          backgroundColor: Palette.neutral[800]
+        }*/
+      }
+    },
+    MuiChip:{
+      styleOverrides: {
+        root:{
+          borderRadius: "8px",
+          backgroundColor: Palette.neutral[400],
+          color: Palette.text.dark,
+          padding: "4px 16px",
+          "&.sizeLarge": {
+            height:"28px",
+          },
+          ".MuiChip-deleteIcon": {
+            fontSize: "0.85em",
+            stroke: "currentColor",
+            color: Palette.text.primary,
+            paddingLeft: "10px",
+            marginRight: "0px",
+          },
+          ".MuiChip-label":{
+          padding: "0",        
+          },
+          fontSize: ThemeFonts.screenxl.chip + `px`,
+          [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+            fontSize: ThemeFonts.screenlg.chip + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+            fontSize: ThemeFonts.screenmd.chip + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+            fontSize: ThemeFonts.screensm.chip + `px`
+          },
+        },
+        sizeMedium: {
+          height:"26px",
+        },
+      },
+    },
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: Palette.primary.dark,
+          padding: "12px 16px",
+          borderRadius:"8px",
+          fontWeight:"400",
+          fontSize: ThemeFonts.screenxl.tooltip + `px`,
+          [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+            fontSize: ThemeFonts.screenlg.tooltip + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+            fontSize: ThemeFonts.screenmd.tooltip + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+            fontSize: ThemeFonts.screensm.tooltip + `px`
+          },
+          span: {
+            color:Palette.primary.dark,
+          },
+          p:{
+            fontWeight: "600",
+            fontSize: ThemeFonts.screenxl.tooltip + `px`,
+            [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+              fontSize: ThemeFonts.screenlg.tooltip + `px`
+            },
+            [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+              fontSize: ThemeFonts.screenmd.tooltip + `px`
+            },
+            [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+              fontSize: ThemeFonts.screensm.tooltip + `px`
+            },
+          },
+        },
+      },
     },
   },
 });

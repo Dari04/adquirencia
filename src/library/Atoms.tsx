@@ -1,10 +1,15 @@
 import * as React from 'react';
-import { ThemeProvider } from "@mui/material/styles";
-import {Box, Button} from "@mui/material";
-import { Typography, Grid } from "@mui/material";
-import theme from "../theme";
 import { makeStyles } from "@mui/styles";
+import { styled } from '@mui/material/styles';
+import { ThemeProvider } from "@mui/material/styles";
+import {Box, Button, Stack, Typography, Grid, Snackbar, SnackbarOrigin, Chip, Zoom} from "@mui/material";
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
+import theme from "../theme";
+import DoneIcon from '@mui/icons-material/Done';
 import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
+import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
+
 
 const useStyles = makeStyles((theme?: any) => ({
   gradientA: { background: theme.palette.gradients.gradientA},
@@ -14,9 +19,57 @@ const useStyles = makeStyles((theme?: any) => ({
   gradientE: { background: theme.palette.gradients.gradientE}
 }));
 
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref,
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
+export interface State extends SnackbarOrigin {
+  open: boolean;
+}
 
 const Atoms: React.FC = () => {
+  //Gradients
   const gradients = useStyles();
+  //Gradients
+
+  //Start Alert
+  const [state, setState] = React.useState<State>({
+    open: false,
+    vertical: "top",
+    horizontal: "center"
+  });
+
+  const { vertical, horizontal, open } = state;
+
+  const snackClick = (newState: SnackbarOrigin) => () => {
+    setState({ open: true, ...newState });
+  };
+
+  const snackClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    setState({ ...state, open: false });
+    if (reason === 'clickaway') {
+      return;
+    }
+  };
+  //Finish Alert
+
+  //Start Chip
+  const chipClick = () => {
+    console.info('Clickeaste el chip.');
+  };
+  
+  const chipDelete = () => {
+    console.info('Clickeaste el ícono borrar.');
+  };
+  //Finish Chip
+  //Start Tooltip HTML
+  const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
+    <Tooltip {...props} 
+    classes={{ popper: className }} />))(() => ({}));
+  //Finish Tooltip HTML
   return (
     <React.Fragment>
     <ThemeProvider theme={theme}>
@@ -891,8 +944,8 @@ const Atoms: React.FC = () => {
         </Grid>
         {/* ----------------  FINISH GRADIENTS COLOR PALETTE  ---------------- */}
       </Grid>
+      {/* ----------------  START TYPOGRAPHY  ---------------- */}
       <Grid container spacing={2} alignItems="center">
-        {/* ----------------  START TYPOGRAPHY  ---------------- */}
         <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="typographyNav">
           <Typography className="titleComponents">
           Typography - Headers & Contents
@@ -1138,10 +1191,10 @@ const Atoms: React.FC = () => {
           </Box>
           {/* --- Finish Color White --- */}
         </Grid>
-        {/* ----------------  FINISH TYPOGRAPHY  ---------------- */}
       </Grid>
+      {/* ----------------  FINISH TYPOGRAPHY  ---------------- */}
+      {/* ----------------  START BUTTONS  ---------------- */}
       <Grid container spacing={2} alignItems="center">
-        {/* ----------------  START BUTTONS  ---------------- */}
         <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="buttonNav">
           <Typography className="titleComponents">
           Buttons - Button Text
@@ -1544,8 +1597,236 @@ const Atoms: React.FC = () => {
           </Grid>
           {/* --- Finish Button Text--- */}
         </Grid>
-        {/* ----------------  FINISH BUTTONS  ---------------- */}
       </Grid>
+      {/* ----------------  FINISH BUTTONS  ---------------- */}
+      {/* ----------------  START DATA DISPLAY  ---------------- */}
+      <Grid container spacing={2} alignItems="center">
+        <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="displayNav">
+          <Typography className="titleComponents">
+          Data Display
+          </Typography>
+          {/* --- Start SnackBar --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+               Snackbar
+          </Typography>
+          <Button variant="outlined" onClick={snackClick({vertical: "top", horizontal: "center"})} sx={{  margin: 'auto auto 30px auto',}}>
+                Demo
+          </Button>
+          <Snackbar open={open} autoHideDuration={6000} anchorOrigin={{ vertical, horizontal }} key={vertical + horizontal} onClose={snackClose}>
+            <Alert severity="success" icon={<DoneIcon />} sx={{ width: '100%' }} onClose={snackClose}>
+              Esto es un snackbar  <a href="#">Info con link</a>
+            </Alert>
+          </Snackbar>
+          <Grid>
+            <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
+                  No close
+            </Typography>
+            <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mb={5} sx={{ width: "100%" }}>
+                <Box gridColumn="span 3">
+                  <Stack spacing={2} mx={0}>
+                      <Alert severity="error" icon={false}>Esto es un snackbar</Alert>
+                      <Alert severity="success" icon={false}>Esto es un snackbar</Alert> 
+                  </Stack>
+                </Box>
+                <Box gridColumn="span 4">
+                  <Stack spacing={2} mx={0}>
+                      <Alert severity="error">Esto es un snackbar</Alert>
+                      <Alert severity="success" icon={<DoneIcon />}>Esto es un snackbar</Alert> 
+                  </Stack>
+                </Box>
+                <Box gridColumn="span 5">
+                  <Stack spacing={2} mx={0}>
+                      <Alert severity="error" icon={false}>Esto es un snackbar <a href="#">Info con link</a></Alert>
+                      <Alert severity="success" icon={false}>Esto es un snackbar <a href="#">Info con link</a></Alert> 
+                      {/* --- 
+                      <Alert severity="warning">This is a warning message!</Alert>
+                      
+                      <Alert severity="info" icon={false}>This is an information message!</Alert>
+                      ---- */}
+                  </Stack>
+                </Box>
+            </Box>
+            <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
+                Close
+            </Typography>
+            <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mb={15} sx={{ width: "100%" }}>
+                <Box gridColumn="span 3">
+                  <Stack spacing={2} mx={0}>
+                      <Alert severity="error" icon={false} onClose={snackClose}>Esto es un snackbar</Alert>
+                      <Alert severity="success" icon={false} onClose={snackClose}>Esto es un snackbar</Alert> 
+                  </Stack>
+                </Box>
+                <Box gridColumn="span 4">
+                  <Stack spacing={2} mx={0}>
+                      <Alert severity="error" onClose={snackClose}>Esto es un snackbar</Alert>
+                      <Alert severity="success" icon={<DoneIcon />} onClose={snackClose}>Esto es un snackbar</Alert> 
+                  </Stack>
+                </Box>
+                <Box gridColumn="span 5">
+                  <Stack spacing={2} mx={0}>
+                      <Alert severity="error" icon={false} onClose={snackClose}>Esto es un snackbar <a href="#">Info con link</a></Alert>
+                      <Alert severity="success" icon={false} onClose={snackClose}>Esto es un snackbar <a href="#">Info con link</a></Alert> 
+                  </Stack>
+                </Box>
+            </Box>
+          </Grid>
+          {/* --- Finish SnackBar --- */}
+          {/* --- Start Chip --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+                  Chip
+          </Typography>
+          <Grid container spacing={3}>
+              <Grid item md={4} sm={12}>
+                  <Box mt={2}>
+                    <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
+                      Small
+                    </Typography>
+                    <Chip
+                          label="Chip base"
+                          size="small"
+                          onClick={chipClick}
+                      />
+                  </Box>
+                  <Box mt={5}>
+                    <Chip
+                      label="Chip base"
+                      size="small"
+                      onClick={chipClick}
+                      onDelete={chipDelete}
+                      deleteIcon={<CloseIcon />}
+                    />
+                  </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                  <Box mt={2}>
+                  <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
+                    Medium
+                  </Typography>
+                  <Chip
+                        label="Chip base"
+                        onClick={chipClick}
+                    />
+                  </Box>
+                  <Box mt={5}>
+                    <Chip
+                      label="Chip base"
+                      onClick={chipClick}
+                      onDelete={chipDelete}
+                      deleteIcon={<CloseIcon />}
+                    />
+                  </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                  <Box  mt={2}>
+                    <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
+                      Large
+                    </Typography>
+                    <Chip
+                          label="Chip base"
+                          className="sizeLarge"
+                          onClick={chipClick}
+                        />
+                  </Box>
+                  <Box  mt={5}>
+                    <Chip
+                      label="Chip base"
+                      className="sizeLarge"
+                      onClick={chipClick}
+                      onDelete={chipDelete}
+                      deleteIcon={<CloseIcon />}
+                    />
+                  </Box>
+              </Grid>
+          </Grid>
+          {/* --- Finish Chip --- */}        
+          {/* --- Start Tooltip --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+            Tooltip
+          </Typography>
+          <Grid container>
+              <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mt={2} sx={{ width: "100%" }}>
+                  <Box gridColumn="span 3">
+                    <Tooltip TransitionComponent={Zoom} title="Tooltip" placement="bottom" arrow>
+                      <Button variant="outlined">Arrow Bottom</Button>
+                    </Tooltip>
+                  </Box>
+                  <Box gridColumn="span 3">
+                    <Tooltip TransitionComponent={Zoom} title="Tooltip" placement="top" arrow>
+                      <Button variant="outlined">Arrow Top</Button>
+                    </Tooltip>
+                  </Box>
+                  <Box gridColumn="span 3">
+                    <Tooltip TransitionComponent={Zoom} title="Tooltip" placement="right" arrow>
+                      <Button variant="outlined">Arrow Right</Button>
+                    </Tooltip>
+                  </Box>
+                  <Box gridColumn="span 3">
+                    <Tooltip TransitionComponent={Zoom} title="Tooltip" placement="left" arrow>
+                      <Button variant="outlined">Arrow Left</Button>
+                    </Tooltip>
+                  </Box>
+              </Box>
+          </Grid>
+          <Grid container>
+              <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mb={5} sx={{ width: "100%" }}>
+                  <Box gridColumn="span 3">
+                    <HtmlTooltip
+                    placement="bottom" arrow
+                      title={
+                        <React.Fragment>
+                          <Typography>Title</Typography>
+                          {"Description"}
+                        </React.Fragment>
+                      }
+                    >
+                      <Button variant="outlined" color="secondary">Arrow Bottom</Button>
+                    </HtmlTooltip>
+                  </Box>
+                  <Box gridColumn="span 3">
+                    <HtmlTooltip
+                    placement="top" arrow
+                      title={
+                        <React.Fragment>
+                          <Typography>Title</Typography>
+                          {"Description"}
+                        </React.Fragment>
+                      }
+                    >
+                      <Button variant="outlined" color="secondary">Arrow Top</Button>
+                    </HtmlTooltip>
+                  </Box>
+                  <Box gridColumn="span 3">
+                    <HtmlTooltip
+                    placement="right" arrow
+                      title={
+                        <React.Fragment>
+                          <Typography>Title</Typography>
+                          {"Description"}
+                        </React.Fragment>
+                      }
+                    >
+                      <Button variant="outlined" color="secondary">Arrow Right</Button>
+                    </HtmlTooltip>
+                  </Box>
+                  <Box gridColumn="span 3">
+                    <HtmlTooltip
+                    placement="left" arrow
+                      title={
+                        <React.Fragment>
+                          <Typography>Title</Typography>
+                          {"Description"}
+                        </React.Fragment>
+                      }
+                    >
+                      <Button variant="outlined" color="secondary">Arrow Left</Button>
+                    </HtmlTooltip>
+                  </Box>
+              </Box>
+          </Grid>
+          {/* --- Finish Tooltip --- */}     
+        </Grid>
+      </Grid>
+      {/* ----------------  FINISH DATA DISPLAY  ---------------- */}
     </ThemeProvider>
     </React.Fragment>
   );
