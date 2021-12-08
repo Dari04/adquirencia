@@ -1,5 +1,4 @@
-import Skeleton from '@mui/material/Skeleton';
-import Typography, { TypographyProps } from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
 import { createTheme } from "@mui/material/styles";
 
 
@@ -784,6 +783,66 @@ const theme = createTheme({
               fontSize: ThemeFonts.screensm.tooltip + `px`
             },
           },
+        },
+      },
+    },
+    MuiBreadcrumbs: {
+      styleOverrides:{
+        root: {
+          fontSize: ThemeFonts.screenxl.overline + `px`,
+          [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+            fontSize: ThemeFonts.screenlg.overline + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+            fontSize: ThemeFonts.screenmd.overline + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+            fontSize: ThemeFonts.screensm.overline + `px`
+          },
+          button: {
+            position: "relative",
+            top: "0.2em",
+            padding: "0",
+            background: "transparent",
+            margin: "0",
+            "&:hover": {
+              color: Palette.primary.components.light.hover,
+              background: "transparent",
+            },
+          }
+        }
+      }
+    },
+    MuiBadge: {
+      styleOverrides:{
+        colorSecondary: {
+          color: Palette.neutral[50],
+          background: Palette.secondary.dark,
+        }
+      },
+    },
+    MuiSwitch: {
+      styleOverrides: {
+        root: {
+          padding: "4px 5px",
+          ".Mui-checked+.MuiSwitch-track": {
+            backgroundColor: Palette.primary.light2 + "!important",
+          },
+          ".Mui-disabled+.MuiSwitch-track":{
+            opacity: "0.3" + "!important",
+          },
+        },
+        switchBase: {
+          color: Palette.neutral[50] + "!important",
+        },
+        thumb: {
+          boxShadow: "none",
+        },
+        track: {
+          borderRadius: "48px",
+          opacity: "initial" + "!important",
+          backgroundColor: Palette.neutral[600],
+
         },
       },
     },

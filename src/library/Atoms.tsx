@@ -2,13 +2,18 @@ import * as React from 'react';
 import { makeStyles } from "@mui/styles";
 import { styled } from '@mui/material/styles';
 import { ThemeProvider } from "@mui/material/styles";
-import {Box, Button, Stack, Typography, Grid, Snackbar, SnackbarOrigin, Chip, Zoom} from "@mui/material";
-import MuiAlert, { AlertProps } from "@mui/material/Alert";
-import theme from "../theme";
 import DoneIcon from '@mui/icons-material/Done';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
-import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
+import {Box, Button, Stack, Typography, Grid, Snackbar, SnackbarOrigin, Chip, Zoom, Link, Breadcrumbs, Badge} from "@mui/material";
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import SwitchUnstyled, { switchUnstyledClasses } from '@mui/base/SwitchUnstyled';
+import Switch from '@mui/material/Switch';
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
+import theme from "../theme";
+import Tooltip, { TooltipProps } from '@mui/material/Tooltip';
 
 
 const useStyles = makeStyles((theme?: any) => ({
@@ -55,7 +60,7 @@ const Atoms: React.FC = () => {
     }
   };
   //Finish Alert
-
+  
   //Start Chip
   const chipClick = () => {
     console.info('Clickeaste el chip.');
@@ -1599,6 +1604,110 @@ const Atoms: React.FC = () => {
         </Grid>
       </Grid>
       {/* ----------------  FINISH BUTTONS  ---------------- */}
+      {/* ----------------  START DATA  ---------------- */}
+      <Grid container spacing={2} alignItems="center">
+        <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="displayNav">
+          <Typography className="titleComponents">
+            Controls
+          </Typography>
+          {/* --- Start Switch --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+            Switch
+          </Typography>
+          <Grid container>
+              <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mt={2} sx={{ width: "100%" }}>
+                  <Box gridColumn="span 3">
+                    <FormGroup>
+                      <FormControlLabel checked={true} control={<Switch defaultChecked />} label="On" />
+                      <FormControlLabel checked={false} control={<Switch />} label="Off" />
+                      <FormControlLabel disabled control={<Switch />} label="Off Disabled" />
+                      <FormControlLabel disabled control={<Switch defaultChecked />} label="On Disabled" />
+                    </FormGroup>
+                  </Box>
+                  <Box gridColumn="span 3">
+                    <FormGroup>
+                      <FormControlLabel
+                        control={<Switch color="primary" />}
+                        label="Off"
+                      />
+                    </FormGroup>
+                  </Box>
+                  <Box gridColumn="span 3">
+                    <FormGroup>
+                      <FormControlLabel
+                        control={<Switch color="primary" />}
+                        disabled
+                        label="On Disabled"
+                      />
+                    </FormGroup>
+                  </Box>
+                  <Box gridColumn="span 3">
+                    <Tooltip TransitionComponent={Zoom} title="Tooltip" placement="left" arrow>
+                      <Button variant="outlined">Arrow Left</Button>
+                    </Tooltip>
+                  </Box>
+              </Box>
+          </Grid>
+          <Grid container>
+              <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mb={5} sx={{ width: "100%" }}>
+                  <Box gridColumn="span 3">
+                    <HtmlTooltip
+                    placement="bottom" arrow
+                      title={
+                        <React.Fragment>
+                          <Typography>Title</Typography>
+                          {"Description"}
+                        </React.Fragment>
+                      }
+                    >
+                      <Button variant="outlined" color="secondary">Arrow Bottom</Button>
+                    </HtmlTooltip>
+                  </Box>
+                  <Box gridColumn="span 3">
+                    <HtmlTooltip
+                    placement="top" arrow
+                      title={
+                        <React.Fragment>
+                          <Typography>Title</Typography>
+                          {"Description"}
+                        </React.Fragment>
+                      }
+                    >
+                      <Button variant="outlined" color="secondary">Arrow Top</Button>
+                    </HtmlTooltip>
+                  </Box>
+                  <Box gridColumn="span 3">
+                    <HtmlTooltip
+                    placement="right" arrow
+                      title={
+                        <React.Fragment>
+                          <Typography>Title</Typography>
+                          {"Description"}
+                        </React.Fragment>
+                      }
+                    >
+                      <Button variant="outlined" color="secondary">Arrow Right</Button>
+                    </HtmlTooltip>
+                  </Box>
+                  <Box gridColumn="span 3">
+                    <HtmlTooltip
+                    placement="left" arrow
+                      title={
+                        <React.Fragment>
+                          <Typography>Title</Typography>
+                          {"Description"}
+                        </React.Fragment>
+                      }
+                    >
+                      <Button variant="outlined" color="secondary">Arrow Left</Button>
+                    </HtmlTooltip>
+                  </Box>
+              </Box>
+          </Grid>
+          {/* --- Finish Switch --- */}     
+        </Grid>
+      </Grid>
+      {/* ----------------  FINISH DATA  ---------------- */}
       {/* ----------------  START DATA DISPLAY  ---------------- */}
       <Grid container spacing={2} alignItems="center">
         <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="displayNav">
@@ -1738,7 +1847,7 @@ const Atoms: React.FC = () => {
                   </Box>
               </Grid>
           </Grid>
-          {/* --- Finish Chip --- */}        
+          {/* --- Finish Chip --- */}  
           {/* --- Start Tooltip --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
             Tooltip
@@ -1824,6 +1933,114 @@ const Atoms: React.FC = () => {
               </Box>
           </Grid>
           {/* --- Finish Tooltip --- */}     
+          {/* --- Start Breadcrumb --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+            Breadcrumb
+          </Typography>
+          <Grid container>
+              <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mt={2} sx={{ width: "100%" }}>
+                  <Box gridColumn="span 12">
+                      <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
+                          Normal
+                      </Typography>
+                      <Breadcrumbs aria-label="breadcrumb" color="text.grey">
+                        <Link underline="hover" color="text.grey" href="#">
+                          Nivel 1
+                        </Link>
+                        <Link underline="hover" color="text.grey" href="#">
+                          Nivel 2
+                        </Link>
+                        <Link underline="hover" color="text.grey" href="#">
+                          Nivel 3
+                        </Link>
+                        <Link underline="hover" color="text.grey" href="#">
+                          Nivel 4
+                        </Link>
+                        <Typography variant="overline" color="primary.light2">Última opción</Typography>
+                      </Breadcrumbs>
+                  </Box>
+                  <Box gridColumn="span 12">
+                      <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
+                        Collapse
+                      </Typography>
+                      <Breadcrumbs maxItems={3} aria-label="breadcrumb" color="text.grey">
+                        <Link underline="hover" color="text.grey" href="#">
+                          Nivel 1
+                        </Link>
+                        <Link underline="hover" color="text.grey" href="#">
+                          Nivel 2
+                        </Link>
+                        <Link underline="hover" color="text.grey" href="#">
+                          Nivel 3
+                        </Link>
+                        <Link underline="hover" color="text.grey" href="#">
+                          Nivel 4
+                        </Link>
+                        <Typography variant="overline" color="primary.light2">Última opción</Typography>
+                      </Breadcrumbs>
+                  </Box>
+              </Box>
+          </Grid>
+          {/* --- Finish Breadcrumb --- */}
+          {/* --- Start Badges --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+            Badges
+          </Typography>
+          <Grid container>
+              <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mt={2} sx={{ width: "100%" }}>
+                  <Box gridColumn="span 12">
+                      <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
+                          Primary
+                      </Typography>
+                      <Stack spacing={4} direction="row" sx={{ color: 'action.active' }}>
+                        <Badge color="primary" badgeContent={1} max={99}>
+                          <NotificationsOutlinedIcon />
+                        </Badge>
+                        <Badge color="primary" badgeContent={2} max={99}>
+                          <NotificationsOutlinedIcon />
+                        </Badge>
+                        <Badge color="primary" badgeContent={3} max={99}>
+                          <NotificationsOutlinedIcon />
+                        </Badge>
+                        <Badge color="primary" badgeContent={4} max={99}>
+                          <NotificationsOutlinedIcon />
+                        </Badge>
+                        <Badge color="primary" badgeContent={5} max={99}>
+                          <NotificationsOutlinedIcon />
+                        </Badge>
+                        <Badge color="primary" badgeContent={1000} max={99}>
+                          <NotificationsOutlinedIcon />
+                        </Badge>
+                      </Stack>
+                  </Box>
+                  <Box gridColumn="span 12">
+                      <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
+                        Secondary
+                      </Typography>
+                      <Stack spacing={4} direction="row" sx={{ color: 'action.active' }}>
+                        <Badge color="secondary" badgeContent={1} max={99}>
+                          <NotificationsOutlinedIcon />
+                        </Badge>
+                        <Badge color="secondary" badgeContent={2} max={99}>
+                          <NotificationsOutlinedIcon />
+                        </Badge>
+                        <Badge color="secondary" badgeContent={3} max={99}>
+                          <NotificationsOutlinedIcon />
+                        </Badge>
+                        <Badge color="secondary" badgeContent={4} max={99}>
+                          <NotificationsOutlinedIcon />
+                        </Badge>
+                        <Badge color="secondary" badgeContent={5} max={99}>
+                          <NotificationsOutlinedIcon />
+                        </Badge>
+                        <Badge color="secondary" badgeContent={1000} max={99}>
+                          <NotificationsOutlinedIcon />
+                        </Badge>
+                      </Stack>
+                  </Box>
+              </Box>
+          </Grid>
+          {/* --- Finish Badges --- */}    
         </Grid>
       </Grid>
       {/* ----------------  FINISH DATA DISPLAY  ---------------- */}

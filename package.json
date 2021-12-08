@@ -8,6 +8,7 @@
     "@emotion/styled": "latest",
     "@fontsource/ibm-plex-mono": "^4.5.1",
     "@fontsource/ibm-plex-sans": "^4.5.1",
+    "@mui/base": "^5.0.0-alpha.59",
     "@mui/icons-material": "^5.2.0",
     "@mui/material": "^5.2.2",
     "@mui/styles": "^5.2.2",
