@@ -118,3 +118,6 @@ body{
     color: #0DC298!important;
     border-color: #0DC298!important;
 }
+.css-ickpwe-MuiDivider-root {
+    border-color: rgba(0, 0, 0, 0.05);
+}

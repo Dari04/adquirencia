@@ -5,15 +5,16 @@ import { ThemeProvider } from "@mui/material/styles";
 import DoneIcon from '@mui/icons-material/Done';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
+import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-import {Box, Button, Stack, Typography, Grid, Snackbar, SnackbarOrigin, Chip, Zoom, Link, Breadcrumbs, Badge} from "@mui/material";
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import SwitchUnstyled, { switchUnstyledClasses } from '@mui/base/SwitchUnstyled';
-import Switch from '@mui/material/Switch';
+import {Divider, Box, Button, Stack, Typography, Grid, Snackbar, SnackbarOrigin, Chip, Zoom, Link, Breadcrumbs, Badge, FormControlLabel, Switch} from "@mui/material";
+import FormControl from '@mui/material/FormControl';
+import Checkbox from "@mui/material/Checkbox";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
+import Tooltip, { TooltipProps } from '@mui/material/Tooltip'
 import theme from "../theme";
-import Tooltip, { TooltipProps } from '@mui/material/Tooltip';
 
 
 const useStyles = makeStyles((theme?: any) => ({
@@ -1604,7 +1605,7 @@ const Atoms: React.FC = () => {
         </Grid>
       </Grid>
       {/* ----------------  FINISH BUTTONS  ---------------- */}
-      {/* ----------------  START DATA  ---------------- */}
+      {/* ----------------  START CONTROLS  ---------------- */}
       <Grid container spacing={2} alignItems="center">
         <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="displayNav">
           <Typography className="titleComponents">
@@ -1612,102 +1613,111 @@ const Atoms: React.FC = () => {
           </Typography>
           {/* --- Start Switch --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
-            Switch
+            Switch  <FormControlLabel sx={{ ml: "10px" }} control={<Switch color="secondary" defaultChecked size="small" />} label=""  />
+          </Typography>
+          <Grid>
+              <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mt={2} sx={{ width: "100%" }}>
+                  <Box gridColumn="span 3">
+                      <FormControlLabel checked={true} control={<Switch color="primary" defaultChecked size="small" /> } label="On" />
+                  </Box>
+                  <Box gridColumn="span 3">
+                      <FormControlLabel checked={false} control={<Switch color="primary" size="small" /> } label="Off" />
+                  </Box>
+                  <Box gridColumn="span 3">
+                      <FormControlLabel disabled checked={true} control={<Switch color="primary" defaultChecked size="small" /> } label="On Disabled" />
+                  </Box>
+                  <Box gridColumn="span 3">
+                      <FormControlLabel disabled checked={false} control={<Switch color="primary" size="small" /> } label="Off Disabled" />
+                  </Box>
+              </Box>
+          </Grid>
+          {/* --- Finish Switch --- */}
+          <Divider sx={{ my: "80px" }}  /> 
+          {/* --- Start Checkbox --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+            Checkbox  <FormControlLabel control={ <Checkbox checkedIcon={<CheckBoxOutlinedIcon />} sx={{ ml: "10px" }} defaultChecked color="secondary" /> } label="" />
+          </Typography>
+          <Grid>
+              <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mt={2} sx={{ width: "100%" }}>
+                  <Box gridColumn="span 3">
+                      <FormControlLabel 
+                      control={ <Checkbox 
+                        checkedIcon={<CheckBoxOutlinedIcon />} 
+                        checked={true} 
+                        color="primary" /> } 
+                      label="On" />
+                  </Box>
+                  <Box gridColumn="span 3">
+                      <FormControlLabel 
+                      control={ <Checkbox 
+                        checkedIcon={<CheckBoxOutlinedIcon />} 
+                        checked={false} 
+                        defaultChecked 
+                        color="primary" /> } 
+                      label="Off" />
+                  </Box>
+                  <Box gridColumn="span 3">
+                      <FormControlLabel 
+                      control={ <Checkbox 
+                        checkedIcon={<CheckBoxOutlinedIcon />} 
+                        disabled checked={true}  
+                        defaultChecked
+                        color="primary" /> } 
+                      label="On Disabled" />
+                  </Box>
+                  <Box gridColumn="span 3">
+                      <FormControlLabel 
+                      control={ <Checkbox 
+                        checkedIcon={<CheckBoxOutlinedIcon />} 
+                        disabled
+                        checked={false}color="primary" /> } 
+                      label="Off Disabled" />
+                  </Box>
+              </Box>
+          </Grid>
+          {/* --- Finish Checkbox --- */}
+          <Divider sx={{ my: "80px" }}  />             
+          {/* --- Start RadioButton --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+            RadioButton  <FormControlLabel value="On" control={<Radio color="secondary" />} label="" />
           </Typography>
           <Grid container>
               <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mt={2} sx={{ width: "100%" }}>
-                  <Box gridColumn="span 3">
-                    <FormGroup>
-                      <FormControlLabel checked={true} control={<Switch defaultChecked />} label="On" />
-                      <FormControlLabel checked={false} control={<Switch />} label="Off" />
-                      <FormControlLabel disabled control={<Switch />} label="Off Disabled" />
-                      <FormControlLabel disabled control={<Switch defaultChecked />} label="On Disabled" />
-                    </FormGroup>
-                  </Box>
-                  <Box gridColumn="span 3">
-                    <FormGroup>
-                      <FormControlLabel
-                        control={<Switch color="primary" />}
-                        label="Off"
-                      />
-                    </FormGroup>
-                  </Box>
-                  <Box gridColumn="span 3">
-                    <FormGroup>
-                      <FormControlLabel
-                        control={<Switch color="primary" />}
-                        disabled
-                        label="On Disabled"
-                      />
-                    </FormGroup>
-                  </Box>
-                  <Box gridColumn="span 3">
-                    <Tooltip TransitionComponent={Zoom} title="Tooltip" placement="left" arrow>
-                      <Button variant="outlined">Arrow Left</Button>
-                    </Tooltip>
-                  </Box>
-              </Box>
-          </Grid>
-          <Grid container>
-              <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mb={5} sx={{ width: "100%" }}>
-                  <Box gridColumn="span 3">
-                    <HtmlTooltip
-                    placement="bottom" arrow
-                      title={
-                        <React.Fragment>
-                          <Typography>Title</Typography>
-                          {"Description"}
-                        </React.Fragment>
-                      }
-                    >
-                      <Button variant="outlined" color="secondary">Arrow Bottom</Button>
-                    </HtmlTooltip>
-                  </Box>
-                  <Box gridColumn="span 3">
-                    <HtmlTooltip
-                    placement="top" arrow
-                      title={
-                        <React.Fragment>
-                          <Typography>Title</Typography>
-                          {"Description"}
-                        </React.Fragment>
-                      }
-                    >
-                      <Button variant="outlined" color="secondary">Arrow Top</Button>
-                    </HtmlTooltip>
-                  </Box>
-                  <Box gridColumn="span 3">
-                    <HtmlTooltip
-                    placement="right" arrow
-                      title={
-                        <React.Fragment>
-                          <Typography>Title</Typography>
-                          {"Description"}
-                        </React.Fragment>
-                      }
-                    >
-                      <Button variant="outlined" color="secondary">Arrow Right</Button>
-                    </HtmlTooltip>
-                  </Box>
-                  <Box gridColumn="span 3">
-                    <HtmlTooltip
-                    placement="left" arrow
-                      title={
-                        <React.Fragment>
-                          <Typography>Title</Typography>
-                          {"Description"}
-                        </React.Fragment>
-                      }
-                    >
-                      <Button variant="outlined" color="secondary">Arrow Left</Button>
-                    </HtmlTooltip>
+                  <Box gridColumn="span 12">
+                        <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
+                        <FormControlLabel
+                          value="On"
+                          control={<Radio color="primary" />}
+                          label="On"
+                          checked={true} 
+                        />
+                        <FormControlLabel
+                          value="Off"
+                          control={<Radio color="primary" />}
+                          label="Off"
+                          checked={false} 
+                        />
+                        <FormControlLabel
+                          value="On Disabled"
+                          disabled
+                          control={<Radio color="primary" />}
+                          label="On Disabled"
+                          checked={true} 
+                        />
+                        <FormControlLabel
+                          value="Off Disabled"
+                          disabled
+                          control={<Radio color="primary" />}
+                          label="Off Disabled"
+                        />
+                        </RadioGroup>
                   </Box>
               </Box>
           </Grid>
-          {/* --- Finish Switch --- */}     
+          {/* --- Finish RadioButton --- */}
         </Grid>
       </Grid>
-      {/* ----------------  FINISH DATA  ---------------- */}
+      {/* ----------------  FINISH CONTROLS  ---------------- */}
       {/* ----------------  START DATA DISPLAY  ---------------- */}
       <Grid container spacing={2} alignItems="center">
         <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="displayNav">
@@ -1758,7 +1768,7 @@ const Atoms: React.FC = () => {
             <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
                 Close
             </Typography>
-            <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mb={15} sx={{ width: "100%" }}>
+            <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" sx={{ width: "100%" }}>
                 <Box gridColumn="span 3">
                   <Stack spacing={2} mx={0}>
                       <Alert severity="error" icon={false} onClose={snackClose}>Esto es un snackbar</Alert>
@@ -1780,6 +1790,7 @@ const Atoms: React.FC = () => {
             </Box>
           </Grid>
           {/* --- Finish SnackBar --- */}
+          <Divider sx={{ my: "80px" }}  /> 
           {/* --- Start Chip --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
                   Chip
@@ -1848,6 +1859,7 @@ const Atoms: React.FC = () => {
               </Grid>
           </Grid>
           {/* --- Finish Chip --- */}  
+          <Divider sx={{ my: "50px" }}  /> 
           {/* --- Start Tooltip --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
             Tooltip
@@ -1876,7 +1888,7 @@ const Atoms: React.FC = () => {
                   </Box>
               </Box>
           </Grid>
-          <Grid container>
+          <Grid>
               <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mb={5} sx={{ width: "100%" }}>
                   <Box gridColumn="span 3">
                     <HtmlTooltip
@@ -1932,12 +1944,13 @@ const Atoms: React.FC = () => {
                   </Box>
               </Box>
           </Grid>
-          {/* --- Finish Tooltip --- */}     
+          {/* --- Finish Tooltip --- */}   
+          <Divider sx={{ my: "80px" }}  />  
           {/* --- Start Breadcrumb --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
             Breadcrumb
           </Typography>
-          <Grid container>
+          <Grid>
               <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mt={2} sx={{ width: "100%" }}>
                   <Box gridColumn="span 12">
                       <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
@@ -1982,6 +1995,7 @@ const Atoms: React.FC = () => {
               </Box>
           </Grid>
           {/* --- Finish Breadcrumb --- */}
+          <Divider sx={{ my: "80px" }}  /> 
           {/* --- Start Badges --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
             Badges

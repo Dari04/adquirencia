@@ -107,7 +107,7 @@ const ThemeFonts = {
     button: 16,
     buttonsm: 14,
     buttonlg: 20,
-    inputLabel: 12,
+    inputLabel: 14,
     inputText: 16,
     helperText: 12,
     tooltip: 14,
@@ -131,7 +131,7 @@ const ThemeFonts = {
     button: 16,
     buttonsm: 14,
     buttonlg: 20,
-    inputLabel: 12,
+    inputLabel: 14,
     inputText: 16,
     helperText: 12,
     tooltip: 14,
@@ -155,7 +155,7 @@ const ThemeFonts = {
     button: 15,
     buttonsm: 13,
     buttonlg: 18,
-    inputLabel: 11,
+    inputLabel: 14,
     inputText: 14,
     helperText: 11,
     tooltip: 13,
@@ -179,7 +179,7 @@ const ThemeFonts = {
     button: 14,
     buttonsm: 13,
     buttonlg: 16,
-    inputLabel: 12,
+    inputLabel: 14,
     inputText: 14,
     helperText: 11,
     tooltip: 12,
@@ -667,6 +667,97 @@ const theme = createTheme({
         },
       ],
     },
+    MuiSwitch: {
+      styleOverrides: {
+        root: {
+          padding: "4px 5px",
+          "&+.MuiFormControlLabel-label": {
+            fontSize: ThemeFonts.screenxl.inputLabel  + `px` + `!important`,
+          },
+          ".Mui-disabled+.MuiSwitch-track":{
+            opacity: "0.3" + "!important",
+          },
+        },
+        switchBase: {
+          color: Palette.neutral[50] + "!important",
+        },
+        thumb: {
+          boxShadow: "none",
+        },
+        track: {
+          borderRadius: "48px",
+          opacity: "initial" + "!important",
+          backgroundColor: Palette.neutral[600],
+
+        },
+        colorPrimary: {
+          "&.Mui-checked + .MuiSwitch-track": {
+            backgroundColor: Palette.primary.light2 + "!important",
+          },
+        },
+        colorSecondary: {
+          "&.Mui-checked + .MuiSwitch-track": {
+            backgroundColor: Palette.secondary.dark + "!important",
+          },
+        },
+        sizeSmall: {
+          padding: "0px",
+          "&+.MuiFormControlLabel-label": {
+            marginLeft: "5px",
+          },
+        },
+      },
+    },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          "&+.MuiFormControlLabel-label": {
+            fontSize: ThemeFonts.screenxl.inputLabel  + `px` + `!important`,
+          },
+          "&.Mui-disabled": {
+            color: Palette.neutral[600] + `!important`,
+            opacity: "0.3",
+          },
+        },
+        colorPrimary: {
+          color: Palette.primary.light2,
+          "&.Mui-checked": {
+            color: Palette.primary.light2
+          },
+        },
+        colorSecondary: {
+          color: Palette.secondary.dark,
+          "&.Mui-checked": {
+            color: Palette.secondary.dark
+          },
+        }
+      }
+    },
+    MuiRadio: {
+      styleOverrides: {
+        root:{
+          "&+.MuiFormControlLabel-label": {
+            fontSize: ThemeFonts.screenxl.inputLabel  + `px` + `!important`,
+          },
+          "&.Mui-disabled": {
+            color: Palette.neutral[600] + "!important",
+            opacity: "0.3",
+          },
+        },
+        colorPrimary: {
+          color: Palette.primary.light2,
+          "&.Mui-checked": {
+            color: Palette.primary.light2
+          },
+        },
+        colorSecondary: {
+          color: Palette.secondary.dark,
+          "&.Mui-checked": {
+            color: Palette.secondary.dark
+          },
+        }
+      }
+    },
     MuiAlert: {
       styleOverrides: {
         root: {
@@ -819,31 +910,6 @@ const theme = createTheme({
           color: Palette.neutral[50],
           background: Palette.secondary.dark,
         }
-      },
-    },
-    MuiSwitch: {
-      styleOverrides: {
-        root: {
-          padding: "4px 5px",
-          ".Mui-checked+.MuiSwitch-track": {
-            backgroundColor: Palette.primary.light2 + "!important",
-          },
-          ".Mui-disabled+.MuiSwitch-track":{
-            opacity: "0.3" + "!important",
-          },
-        },
-        switchBase: {
-          color: Palette.neutral[50] + "!important",
-        },
-        thumb: {
-          boxShadow: "none",
-        },
-        track: {
-          borderRadius: "48px",
-          opacity: "initial" + "!important",
-          backgroundColor: Palette.neutral[600],
-
-        },
       },
     },
   },
