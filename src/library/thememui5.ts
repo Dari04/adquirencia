@@ -158,7 +158,7 @@ const ThemeFonts = {
     buttonsm: 13,
     buttonlg: 18,
     inputLabel: 14,
-    inputText: 14,
+    inputText: 15,
     helperText: 11,
     tooltip: 13,
     avatarLetter: 16,
@@ -1085,37 +1085,100 @@ const theme = createTheme({
         }
       },
     },
-    MuiFormLabel: {
+    MuiFormHelperText: {
       styleOverrides: {
         root: {
-          color: Palette.text.grey + "!important",
+          color: Palette.text.grey,
+          "&.Mui-error": {
+            color: Palette.text.grey,
+            margin: "3px 4px 0px 4px",
+            fontSize: "13px"
+          }
+        }
+      }
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+            color: Palette.text.grey,
+            fontSize: ThemeFonts.screenxl.inputText + `px`,
+            [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+              fontSize: ThemeFonts.screenlg.inputText + `px`
+            },
+            [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+              fontSize: ThemeFonts.screenmd.inputText + `px`
+            },
+            [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+              fontSize: ThemeFonts.screensm.inputText + `px`
+            },
+        },
+        outlined: {
+          borderRadius: "8px",
+          top: "-5px"
         }
       }
     },
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          borderRadius: "8px",
+          borderRadius: "8px!important",
           position: "relative",
+          input:{
+            padding: "10.5px 14px",
+            color: Palette.text.dark,
+            fontSize: ThemeFonts.screenxl.inputText + `px`,
+            [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+              fontSize: ThemeFonts.screenlg.inputText + `px`
+            },
+            [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+              fontSize: ThemeFonts.screenmd.inputText + `px`
+            },
+            [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+              fontSize: ThemeFonts.screensm.inputText + `px`
+            },
+          },
+          ".MuiInputAdornment-positionEnd":{
+            color: Palette.neutral.components.disabled,
+          },
+          "&.Mui-error": {
+            input:{
+              color: Palette.error.dark2,
+            },
+          },
           ".MuiOutlinedInput-notchedOutline": {
-            borderColor: Palette.neutral[500] + "!important",
-            "&:hover": {
-              borderColor: Palette.primary.light
-            }
+            borderColor: Palette.neutral[500],
           },
-          "&:hover:not(:disabled):not($focused):not($error) $notchedOutline": {
-            borderColor: Palette.neutral[800] + "!important",
-            "@media (hover: none)": {
-              borderColor: Palette.primary.light
-            }
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline , &:hover .MuiOutlinedInput-notchedOutline":{
+            borderColor: Palette.primary.light + "!important",
+            borderWidth: "1px",
           },
-          "&$focused $notchedOutline": {
-            borderColor: Palette.primary.light,
-            borderWidth: "1px"
-          }
+          "&.Mui-error .MuiOutlinedInput-notchedOutline":{
+            borderColor: Palette.error.dark2 + "!important",
+          },
+          "&.Mui-disabled .MuiOutlinedInput-notchedOutline":{
+            borderColor: Palette.neutral.components.disabled + "!important",
+          },
         }
       }
     },
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          color: Palette.text.grey + "!important",
+          top: "-6px" + "!important",
+          "&.MuiInputLabel-shrink":{
+            top: "0px" + "!important",
+          },
+          "&.Mui-error": {
+            color: Palette.error.dark2 + "!important",
+          },
+          "&.Mui-disabled":{
+            color: Palette.neutral.components.disabled + "!important",
+          },
+        }
+      }
+    },
+
   },
 });
 

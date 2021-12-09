@@ -6,9 +6,11 @@ import DoneIcon from '@mui/icons-material/Done';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
+import SearchIcon from '@mui/icons-material/Search';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import {Grid, Divider, Box, Button, IconButton, Stack, Typography, TextField, Snackbar, SnackbarOrigin, Chip, Zoom, Link, Breadcrumbs, Badge, FormControlLabel, Switch, Checkbox, Radio, RadioGroup} from "@mui/material";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
+import InputAdornment from '@mui/material/InputAdornment';
 import Tooltip, { TooltipProps } from '@mui/material/Tooltip'
 import theme from "../theme";
 
@@ -74,6 +76,7 @@ const Atoms: React.FC = () => {
   return (
     <React.Fragment>
     <ThemeProvider theme={theme}>
+      
       <Grid container spacing={2} alignItems="center" className="colorPalette">
         {/* ----------------  START THEME COLOR PALETTE  ---------------- */}
         <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="themeColors">
@@ -1913,42 +1916,103 @@ const Atoms: React.FC = () => {
       {/* ----------------  FINISH CONTROLS  ---------------- */}
 
       {/* ----------------  START TEXTFIELD  ---------------- */}
-      <Grid container spacing={2} alignItems="center">
+      <Grid container spacing={1} alignItems="center">
         <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="textFieldsNav">
           <Typography className="titleComponents">
             Textfields
           </Typography>
-          {/* --- Start Icon Button Primary --- */}
+          {/* --- Start No Icons --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
-              Primary button
+              No Icons
           </Typography>
           <Grid container spacing={3} textAlign="center">
               <Grid item md={4} sm={12}>
                 <Box mt={2}>
-                  <TextField label="Outlined" variant="outlined" fullWidth />
+                  <TextField label="Input" variant="outlined" fullWidth />
                 </Box>
               </Grid>
               <Grid item md={4} sm={12}>
                 <Box mt={2}>
-                  <IconButton
-                    color="primary"
-                    size="small"
-                  ><AddIcon />
-                  </IconButton>
+                <TextField label="Input" variant="outlined" fullWidth error />
                 </Box>
               </Grid>
               <Grid item md={4} sm={12}>
                 <Box mt={2}>
-                  <IconButton
-                    disabled
-                    color="primary"
-                    size="small"
-                  ><AddIcon />
-                  </IconButton>
+                  <TextField label="Input" variant="outlined" fullWidth disabled />
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <TextField value="Value text" label="Input" variant="outlined" fullWidth helperText="Assistive text" />
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                <TextField value="Value text" label="Input" variant="outlined" fullWidth error helperText="Assistive text" />
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <TextField value="Value text" label="Input" variant="outlined" fullWidth disabled helperText="Assistive text" />
                 </Box>
               </Grid>
           </Grid>
-          {/* --- Finish Icon Button Primary --- */}
+          {/* --- Finish No icons --- */}
+          {/* --- Start Icons --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+              Icons  
+          </Typography>
+          <Grid container spacing={3} textAlign="center">
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <TextField label="Input" variant="outlined" fullWidth 
+                  InputProps={{
+                    endAdornment: <InputAdornment position="end"><SearchIcon /></InputAdornment>,
+                  }} />
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <TextField label="Input" variant="outlined" fullWidth error 
+                    InputProps={{
+                      endAdornment: <InputAdornment position="end"><SearchIcon /></InputAdornment>,
+                    }} />
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <TextField label="Input" variant="outlined" fullWidth disabled 
+                    InputProps={{
+                    endAdornment: <InputAdornment position="end"><SearchIcon /></InputAdornment>,
+                  }} />
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <TextField value="Value text" label="Input" variant="outlined" fullWidth helperText="Assistive text" 
+                    InputProps={{
+                    endAdornment: <InputAdornment position="end"><SearchIcon /></InputAdornment>,
+                  }} />
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                <TextField value="Value text" label="Input" variant="outlined" fullWidth error helperText="Assistive text" 
+                  InputProps={{
+                    endAdornment: <InputAdornment position="end"><SearchIcon /></InputAdornment>,
+                  }} />
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <TextField value="Value text" label="Input" variant="outlined" fullWidth disabled helperText="Assistive text" 
+                    InputProps={{
+                    endAdornment: <InputAdornment position="end"><SearchIcon /></InputAdornment>,
+                  }} />
+                </Box>
+              </Grid>
+          </Grid>
+          {/* --- Finish Icons --- */}
         </Grid>
       </Grid>
       {/* ----------------  FINISH TEXTFIELD  ---------------- */}
@@ -2353,4 +2417,7 @@ const Atoms: React.FC = () => {
     </React.Fragment>
   );
 }
+
+
+
 export default Atoms;

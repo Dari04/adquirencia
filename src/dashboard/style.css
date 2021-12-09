@@ -122,5 +122,5 @@ body{
     border-color: rgba(0, 0, 0, 0.05);
 }
 .MuiContainer-root .MuiGrid-container #textFieldsNav .MuiGrid-root.MuiGrid-item {
-    padding: 32px 25px 0px 25px!important;
+    padding: 32px 0px 0px 25px!important;
 }
