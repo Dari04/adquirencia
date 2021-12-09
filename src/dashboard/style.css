@@ -121,3 +121,6 @@ body{
 .css-ickpwe-MuiDivider-root {
     border-color: rgba(0, 0, 0, 0.05);
 }
+.MuiContainer-root .MuiGrid-container #textFieldsNav .MuiGrid-root.MuiGrid-item {
+    padding: 32px 25px 0px 25px!important;
+}

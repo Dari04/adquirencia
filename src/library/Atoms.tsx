@@ -7,7 +7,7 @@ import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-import {Divider, Box, Button, Stack, Typography, Grid, Snackbar, SnackbarOrigin, Chip, Zoom, Link, Breadcrumbs, Badge, FormControlLabel, Switch, Checkbox, Radio, RadioGroup} from "@mui/material";
+import {Grid, Divider, Box, Button, IconButton, Stack, Typography, TextField, Snackbar, SnackbarOrigin, Chip, Zoom, Link, Breadcrumbs, Badge, FormControlLabel, Switch, Checkbox, Radio, RadioGroup} from "@mui/material";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import Tooltip, { TooltipProps } from '@mui/material/Tooltip'
 import theme from "../theme";
@@ -1600,6 +1600,204 @@ const Atoms: React.FC = () => {
         </Grid>
       </Grid>
       {/* ----------------  FINISH BUTTONS  ---------------- */}
+      {/* ----------------  START ICON BUTTONS  ---------------- */}
+      <Grid container spacing={2} alignItems="center">
+        <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="iconButtonNav">
+          <Typography className="titleComponents">
+            Icon Buttons
+          </Typography>
+          {/* --- Start Icon Button Primary --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+              Primary button
+          </Typography>
+          <Grid container spacing={3} textAlign="center">
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton                   
+                    color="primary"
+                    size="small"
+                  >
+                    <AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    color="primary"
+                    size="small"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    disabled
+                    color="primary"
+                    size="small"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton                   
+                    color="primary"
+                    size="medium"
+                  >
+                    <AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    color="primary"
+                    size="medium"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    disabled
+                    color="primary"
+                    size="medium"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton                   
+                    color="primary"
+                    size="large"
+                  >
+                    <AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    color="primary"
+                    size="large"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    disabled
+                    color="primary"
+                    size="large"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+          </Grid>
+          {/* --- Finish Icon Button Primary --- */}
+          {/* --- Start Icon Button Secondary --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+              Secondary button
+          </Typography>
+          <Grid container spacing={3} textAlign="center" pb={10}>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton                   
+                    color="secondary"
+                    size="small"
+                  >
+                    <AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    color="secondary"
+                    size="small"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    disabled
+                    color="secondary"
+                    size="small"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton                   
+                    color="secondary"
+                    size="medium"
+                  >
+                    <AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    color="secondary"
+                    size="medium"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    disabled
+                    color="secondary"
+                    size="medium"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton                   
+                    color="secondary"
+                    size="large"
+                  >
+                    <AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    color="secondary"
+                    size="large"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    disabled
+                    color="secondary"
+                    size="large"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+          </Grid>
+          {/* --- Finish Icon Button Secondary --- */}
+        </Grid>
+      </Grid>
+      {/* ----------------  FINISH ICON BUTTONS  ---------------- */}
+
       {/* ----------------  START CONTROLS  ---------------- */}
       <Grid container spacing={2} alignItems="center">
         <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="controlsNav">
@@ -1713,6 +1911,48 @@ const Atoms: React.FC = () => {
         </Grid>
       </Grid>
       {/* ----------------  FINISH CONTROLS  ---------------- */}
+
+      {/* ----------------  START TEXTFIELD  ---------------- */}
+      <Grid container spacing={2} alignItems="center">
+        <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="textFieldsNav">
+          <Typography className="titleComponents">
+            Textfields
+          </Typography>
+          {/* --- Start Icon Button Primary --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+              Primary button
+          </Typography>
+          <Grid container spacing={3} textAlign="center">
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <TextField label="Outlined" variant="outlined" fullWidth />
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    color="primary"
+                    size="small"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+              <Grid item md={4} sm={12}>
+                <Box mt={2}>
+                  <IconButton
+                    disabled
+                    color="primary"
+                    size="small"
+                  ><AddIcon />
+                  </IconButton>
+                </Box>
+              </Grid>
+          </Grid>
+          {/* --- Finish Icon Button Primary --- */}
+        </Grid>
+      </Grid>
+      {/* ----------------  FINISH TEXTFIELD  ---------------- */}
+
       {/* ----------------  START DATA DISPLAY  ---------------- */}
       <Grid container spacing={2} alignItems="center">
         <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="displayNav">

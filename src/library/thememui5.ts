@@ -671,6 +671,114 @@ const theme = createTheme({
         },
       ],
     },
+    MuiIconButton: {
+      defaultProps: {
+        disableRipple: true,
+      },
+      styleOverrides: {
+        root: {
+          padding: "10px",
+          height: "44px",
+          width: "44px",
+          borderRadius: "48px",
+          fontSize: ThemeFonts.screenxl.button + `px`,
+          [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+            fontSize: ThemeFonts.screenlg.button + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+            fontSize: ThemeFonts.screenmd.button + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+            fontSize: ThemeFonts.screensm.button + `px`
+          },
+        },
+        sizeSmall: {
+          height: "36px",
+          width: "36px",
+          padding: "6px",
+          fontSize: ThemeFonts.screenxl.buttonsm + `px`,
+          [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+            fontSize: ThemeFonts.screenlg.buttonsm + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+            fontSize: ThemeFonts.screenmd.buttonsm + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+            fontSize: ThemeFonts.screensm.buttonsm + `px`
+          },
+          svg: {
+            fontSize:"1.25rem!important",
+          },
+        },
+        sizeLarge: {
+          height: "52px",
+          width: "52px",
+          padding: "14px",
+          fontSize: ThemeFonts.screenxl.buttonlg + `px`,
+          [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+            fontSize: ThemeFonts.screenlg.buttonlg + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+            fontSize: ThemeFonts.screenmd.buttonlg + `px`
+          },
+          [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+            fontSize: ThemeFonts.screensm.buttonlg + `px`
+          },
+          svg: {
+            fontSize: "1.72rem!important",
+          }
+        },
+        //@ts-ignore
+        colorPrimary: {
+          color: Palette.neutral[50],
+          border: `1px solid ` + Palette.primary.components.light.default,
+          backgroundColor: Palette.primary.components.light.default,
+          boxShadow: "0px 51px 80px rgba(106, 167, 197, 0.07), 0px 33.0556px 46.8519px rgba(106, 167, 197, 0.0531481), 0px 19.6444px 25.4815px rgba(106, 167, 197, 0.0425185), 0px 10.2px 13px rgba(106, 167, 197, 0.035), 0px 4.15556px 6.51852px rgba(106, 167, 197, 0.0274815), 0px 0.944444px 3.14815px rgba(106, 167, 197, 0.0168519)",
+          filter: "drop-shadow(0px 8px 17px rgba(106, 167, 197, 0.15)) drop-shadow(0px 1.6px 2.7625px rgba(106, 167, 197, 0.075))",
+          "&:hover": {
+            color: Palette.neutral[50],
+            backgroundColor: Palette.primary.components.light.hover,
+            border: `1px solid ` + Palette.primary.components.light.hover,
+            boxShadow: "0px 36px 65px rgba(106, 167, 197, 0.16), 0px 18.225px 28.3359px rgba(106, 167, 197, 0.12), 0px 7.2px 10.5625px rgba(106, 167, 197, 0.08), 0px 1.575px 3.75781px rgba(106, 167, 197, 0.03)",
+            filter: "drop-shadow(0px 36px 65px rgba(106, 167, 197, 0.16)) drop-shadow(0px 18.225px 28.3359px rgba(106, 167, 197, 0.12)) drop-shadow(0px 7.2px 10.5625px rgba(106, 167, 197, 0.08)) drop-shadow(0px 1.575px 3.75781px rgba(106, 167, 197, 0.03))",
+          },
+          "&:focus, &:active": {
+            backgroundColor: Palette.primary.components.light.focus,
+            border: `1px solid ` + Palette.primary.components.light.focus,
+            boxShadow: "0px 8px 17px rgba(106, 167, 197, 0.15), 0px 1.6px 2.7625px rgba(106, 167, 197, 0.075)",
+            filter: "drop-shadow(0px 36px 65px rgba(106, 167, 197, 0.16)) drop-shadow(0px 18.225px 28.3359px rgba(106, 167, 197, 0.12)) drop-shadow(0px 7.2px 10.5625px rgba(106, 167, 197, 0.08)) drop-shadow(0px 1.575px 3.75781px rgba(106, 167, 197, 0.03))",
+          },
+          "&:disabled": {
+            backgroundColor: Palette.primary.components.light.disable,
+            border: `1px solid ` + Palette.primary.components.light.disable,
+            color: Palette.neutral[50],
+            boxShadow: "none",
+          },
+        },
+        colorSecondary: {
+          backgroundColor: Palette.neutral[50],
+          border: `1px solid ` + Palette.neutral[50],
+          color: Palette.text.primary,
+          boxShadow: "0px 8px 17px rgba(106, 167, 197, 0.15), 0px 1.6px 2.7625px rgba(106, 167, 197, 0.075)",
+          filter: "drop-shadow(0px 8px 17px rgba(106, 167, 197, 0.15)) drop-shadow(0px 1.6px 2.7625px rgba(106, 167, 197, 0.075))",
+          "&:hover, &:active, &:focus, &:disabled": {
+            backgroundColor: Palette.neutral[50],
+            border: `1px solid ` + Palette.neutral[50],
+          },
+          "&:hover": {
+            color: Palette.primary.light2,
+            boxShadow: "0px 51px 80px rgba(106, 167, 197, 0.07), 0px 33.0556px 46.8519px rgba(106, 167, 197, 0.0531481), 0px 19.6444px 25.4815px rgba(106, 167, 197, 0.0425185), 0px 10.2px 13px rgba(106, 167, 197, 0.035), 0px 4.15556px 6.51852px rgba(106, 167, 197, 0.0274815), 0px 0.944444px 3.14815px rgba(106, 167, 197, 0.0168519)"
+          },
+          "&:active, &:focus": {
+            color: Palette.text.primary
+          },
+          "&:disabled": {
+            color: Palette.text.primary,
+            opacity: "35%"
+          }
+        },
+      },
+    },
     MuiSwitch: {
       styleOverrides: {
         root: {
@@ -976,6 +1084,37 @@ const theme = createTheme({
           background: Palette.secondary.dark,
         }
       },
+    },
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          color: Palette.text.grey + "!important",
+        }
+      }
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          borderRadius: "8px",
+          position: "relative",
+          ".MuiOutlinedInput-notchedOutline": {
+            borderColor: Palette.neutral[500] + "!important",
+            "&:hover": {
+              borderColor: Palette.primary.light
+            }
+          },
+          "&:hover:not(:disabled):not($focused):not($error) $notchedOutline": {
+            borderColor: Palette.neutral[800] + "!important",
+            "@media (hover: none)": {
+              borderColor: Palette.primary.light
+            }
+          },
+          "&$focused $notchedOutline": {
+            borderColor: Palette.primary.light,
+            borderWidth: "1px"
+          }
+        }
+      }
     },
   },
 });

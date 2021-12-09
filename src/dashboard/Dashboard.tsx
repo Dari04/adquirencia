@@ -64,14 +64,14 @@ function MenuList() {
         <ListItemButton component="a" href="#buttonNav">
           <ListItemText primary="Buttons" />
         </ListItemButton>
-      <ListItemButton component="a" href="#">
-        <ListItemText primary="Square Buttons" />
+      <ListItemButton component="a" href="#iconButtonNav">
+        <ListItemText primary="Icon Buttons" />
       </ListItemButton>
         <ListItemButton component="a" href="#controlsNav">
           <ListItemText primary="Controls" />
         </ListItemButton>
-      <ListItemButton component="a" href="#">
-        <ListItemText primary="TextField" />
+      <ListItemButton component="a" href="#textFieldsNav">
+        <ListItemText primary="TextFields" />
       </ListItemButton>
       <ListItemButton component="a" href="#">
         <ListItemText primary="TextField Select & ISO" />
