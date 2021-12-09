@@ -67,7 +67,7 @@ function MenuList() {
       <ListItemButton component="a" href="#">
         <ListItemText primary="Square Buttons" />
       </ListItemButton>
-        <ListItemButton component="a" href="#">
+        <ListItemButton component="a" href="#controlsNav">
           <ListItemText primary="Controls" />
         </ListItemButton>
       <ListItemButton component="a" href="#">

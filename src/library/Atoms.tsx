@@ -7,15 +7,10 @@ import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-import {Divider, Box, Button, Stack, Typography, Grid, Snackbar, SnackbarOrigin, Chip, Zoom, Link, Breadcrumbs, Badge, FormControlLabel, Switch} from "@mui/material";
-import FormControl from '@mui/material/FormControl';
-import Checkbox from "@mui/material/Checkbox";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
+import {Divider, Box, Button, Stack, Typography, Grid, Snackbar, SnackbarOrigin, Chip, Zoom, Link, Breadcrumbs, Badge, FormControlLabel, Switch, Checkbox, Radio, RadioGroup} from "@mui/material";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import Tooltip, { TooltipProps } from '@mui/material/Tooltip'
 import theme from "../theme";
-
 
 const useStyles = makeStyles((theme?: any) => ({
   gradientA: { background: theme.palette.gradients.gradientA},
@@ -1607,13 +1602,13 @@ const Atoms: React.FC = () => {
       {/* ----------------  FINISH BUTTONS  ---------------- */}
       {/* ----------------  START CONTROLS  ---------------- */}
       <Grid container spacing={2} alignItems="center">
-        <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="displayNav">
+        <Grid item sx={{ mx: "auto", width: `calc(90%)`, }} id="controlsNav">
           <Typography className="titleComponents">
             Controls
           </Typography>
           {/* --- Start Switch --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
-            Switch  <FormControlLabel sx={{ ml: "10px" }} control={<Switch color="secondary" defaultChecked size="small" />} label=""  />
+            Switch  <FormControlLabel sx={{ ml: "10px" }} control={<Switch color="secondary" defaultChecked size="small" />} label="Input"  />
           </Typography>
           <Grid>
               <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mt={2} sx={{ width: "100%" }}>
@@ -1635,7 +1630,7 @@ const Atoms: React.FC = () => {
           <Divider sx={{ my: "80px" }}  /> 
           {/* --- Start Checkbox --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
-            Checkbox  <FormControlLabel control={ <Checkbox checkedIcon={<CheckBoxOutlinedIcon />} sx={{ ml: "10px" }} defaultChecked color="secondary" /> } label="" />
+            Checkbox  <FormControlLabel control={ <Checkbox checkedIcon={<CheckBoxOutlinedIcon />} sx={{ ml: "10px" }} defaultChecked color="secondary" /> } label="Input" />
           </Typography>
           <Grid>
               <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mt={2} sx={{ width: "100%" }}>
@@ -1679,7 +1674,7 @@ const Atoms: React.FC = () => {
           <Divider sx={{ my: "80px" }}  />             
           {/* --- Start RadioButton --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
-            RadioButton  <FormControlLabel value="On" control={<Radio color="secondary" />} label="" />
+            RadioButton  <FormControlLabel value="On" control={<Radio color="secondary" />} label="Input" />
           </Typography>
           <Grid container>
               <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={3} alignItems="end" mt={2} sx={{ width: "100%" }}>
@@ -1791,6 +1786,62 @@ const Atoms: React.FC = () => {
           </Grid>
           {/* --- Finish SnackBar --- */}
           <Divider sx={{ my: "80px" }}  /> 
+          {/* --- Start Tags --- */}
+          <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
+                  Tags
+          </Typography>
+          <Grid container spacing={3}>
+              <Grid item md={2} sm={12}>
+                  <Box mt={2}>
+                    <Chip
+                        label="APROBADA"
+                        color="success"
+                    />
+                  </Box>
+              </Grid>
+              <Grid item md={2} sm={12}>
+                  <Box mt={2}>
+                    <Chip
+                        label="Declinada"
+                        color="error"
+                    />
+                  </Box>
+              </Grid>
+              <Grid item md={2} sm={12}>
+                  <Box mt={2}>
+                    <Chip
+                        label="Inicializada"
+                        color="info"
+                    />
+                  </Box>
+              </Grid>
+              <Grid item md={2} sm={12}>
+                  <Box mt={2}>
+                    <Chip
+                        label="pendiente"
+                        color="secondary"
+                    />
+                  </Box>
+              </Grid>
+              <Grid item md={2} sm={12}>
+                  <Box mt={2}>
+                    <Chip
+                        label="enviada"
+                        color="primary"
+                    />
+                  </Box>
+              </Grid>
+              <Grid item md={2} sm={12}>
+                  <Box mt={2}>
+                    <Chip
+                        label="omitida"
+                        color="warning"
+                    />
+                  </Box>
+              </Grid>
+          </Grid>
+          {/* --- Finish Tags --- */}  
+          <Divider sx={{ my: "50px" }}  /> 
           {/* --- Start Chip --- */}
           <Typography variant="h3" component="div" sx={{ pb: "30px" }}>
                   Chip

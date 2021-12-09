@@ -113,6 +113,7 @@ const ThemeFonts = {
     tooltip: 14,
     avatarLetter: 20,
     chip: 14,
+    tag: 12,
   },
   screenlg: {
     h1: 38,
@@ -137,6 +138,7 @@ const ThemeFonts = {
     tooltip: 14,
     avatarLetter: 18,
     chip: 14,
+    tag: 12,
   },
   screenmd: {
     h1: 28,
@@ -161,6 +163,7 @@ const ThemeFonts = {
     tooltip: 13,
     avatarLetter: 16,
     chip: 14,
+    tag: 12,
   },
   screensm: {
     h1: 23,
@@ -185,6 +188,7 @@ const ThemeFonts = {
     tooltip: 12,
     avatarLetter: 16,
     chip: 14,
+    tag: 12,
   }
 };
 
@@ -808,10 +812,12 @@ const theme = createTheme({
     MuiChip:{
       styleOverrides: {
         root:{
-          borderRadius: "8px",
-          backgroundColor: Palette.neutral[400],
-          color: Palette.text.dark,
           padding: "4px 16px",
+          borderRadius: "4px" + "!important",
+          textTransform: "uppercase",
+          fontWeight: "500",
+          lineHeight: "170%",
+          letterSpacing: "0.02em",
           "&.sizeLarge": {
             height:"28px",
           },
@@ -825,15 +831,74 @@ const theme = createTheme({
           ".MuiChip-label":{
           padding: "0",        
           },
-          fontSize: ThemeFonts.screenxl.chip + `px`,
+          fontSize: ThemeFonts.screenxl.tag + `px`,
           [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
-            fontSize: ThemeFonts.screenlg.chip + `px`
+            fontSize: ThemeFonts.screenlg.tag + `px`
           },
           [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-            fontSize: ThemeFonts.screenmd.chip + `px`
+            fontSize: ThemeFonts.screenmd.tag + `px`
           },
           [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
-            fontSize: ThemeFonts.screensm.chip + `px`
+            fontSize: ThemeFonts.screensm.tag + `px`
+          },
+        },
+        //@ts-ignore
+        //Chip Styles = Default
+        colorDefault: {
+          "&.MuiChip-filledDefault": {
+            borderRadius: "8px" + "!important",
+            backgroundColor: Palette.neutral[400],
+            color: Palette.text.dark,
+            textTransform: "none",
+            lineHeight: "140%",
+            letterSpacing: "normal",
+            fontWeight: "400",
+            fontSize: ThemeFonts.screenxl.chip + `px`,
+            [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+              fontSize: ThemeFonts.screenlg.chip + `px`
+            },
+            [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+              fontSize: ThemeFonts.screenmd.chip + `px`
+            },
+            [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+              fontSize: ThemeFonts.screensm.chip + `px`
+            },
+          },
+        },
+        colorSuccess: {
+          "&.MuiChip-filledSuccess": {
+            backgroundColor: Palette.secondary.light3,
+            color: Palette.secondary.dark2,
+          },
+        },
+        colorError: {
+          "&.MuiChip-filledError": {
+            backgroundColor: Palette.error.light3,
+            color: Palette.error.dark2,
+          },
+        },
+        colorInfo: {
+          "&.MuiChip-filledInfo": {
+            backgroundColor: Palette.neutral[300],
+            color: Palette.text.grey,
+          },
+        },
+        colorSecondary: {
+          "&.MuiChip-filledSecondary": {
+            backgroundColor: Palette.alternate.light3,
+            color: Palette.alternate.dark2,
+          },
+        },
+        colorPrimary: {
+          "&.MuiChip-filledPrimary": {
+            backgroundColor: Palette.primary.light3,
+            color: Palette.primary.main
+          },
+        },
+        colorWarning: {
+          "&.MuiChip-filledWarning": {
+            backgroundColor: Palette.neutral[200],
+            color: Palette.text.grey,
           },
         },
         sizeMedium: {

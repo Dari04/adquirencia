@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom"
-    ],
+    "lib": [ "dom" ],
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
@@ -19,16 +17,15 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "outDir": "./public/",
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "/**/*.d.ts",
-    "**/*.svg",
-    "*.svg"
-, "public/dashboard"  ],
+    "src",
+],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "/**/*.d.ts"
   ]
 }
