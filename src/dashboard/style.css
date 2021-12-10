@@ -110,7 +110,16 @@ body{
 #buttonNav .css-1b6hymy-MuiTypography-root {
     margin-top: 5rem;
 }
+.logoIcon {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+}
 
+.logoIcon img {
+    margin-right: 0.7rem;
+}
 #buttonNav .css-1b6hymy-MuiTypography-root:first-of-type {
     margin-top: 0;
 }
@@ -121,6 +130,109 @@ body{
 .css-ickpwe-MuiDivider-root {
     border-color: rgba(0, 0, 0, 0.05);
 }
-.MuiContainer-root .MuiGrid-container #textFieldsNav .MuiGrid-root.MuiGrid-item {
+.MuiContainer-root .MuiGrid-container #textFieldsNav .MuiGrid-root.MuiGrid-item,
+.MuiContainer-root .MuiGrid-container #textFieldSelectNav .MuiGrid-root.MuiGrid-item
+{
     padding: 32px 0px 0px 25px!important;
+    text-align:left;
+}
+
+@media only screen and (max-width: 800px) {
+    .MuiPaper-root .MuiIconButton-root {
+        margin-right: 0px!important;
+    }
+    .colorPalette .MuiBox-root .MuiTypography-root {
+        font-size: 90%!important;
+    }
+    .MuiContainer-root .MuiGrid-container .MuiGrid-root.MuiGrid-item {
+        padding: 32px 15px 0px 15px!important;
+        width: calc(95%)!important;
+    }
+    .css-zow5z4-MuiGrid-root{
+        width: 100%!important;
+        margin: 0!important;
+    }
+    .css-vd9vhy-MuiContainer-root {
+        padding-left: 13px!important;
+        padding-right: 0px!important;
+    }
+    .css-1jpv6k6-MuiGrid-root{
+        margin-left: -13px!important;
+    }
+    .css-1pjh31l-MuiDrawer-docked, .css-1pjh31l-MuiDrawer-docked .MuiDrawer-paper {
+        width: 100%!important;
+         min-width: 100%!important; 
+    }
+    .primaryColors , .secondaryColors, .errorColors , .alternateColors,
+    .warningColors,.greyColors, .typographyColors  { 
+         grid-template-columns: repeat(4, 1fr)!important;
+    }
+    .primaryComponents  {
+        grid-template-columns: repeat(6, 1fr)!important;
+    }
+    .greyComponents.css-nyara6 {
+        grid-template-columns: repeat(6, 1fr)!important;
+    }
+    .gradientsColors {
+        grid-template-columns: repeat(12, 1fr)!important;
+    }
+    
+    .gradientsColors .MuiBox-root {
+        grid-column: span 12!important;
+    }
+    .colorPalette .MuiBox-root .MuiBox-root.css-0 .MuiBox-root {
+        height: 150px!important;
+    }
+    
+    .colorPalette .MuiBox-root p.MuiTypography-root {
+        margin-bottom: 3rem;
+    }
+    
+    #buttonNav .MuiGrid-grid-sm-12 {
+        text-align: center!important;
+    }
+    
+    #controlsNav .css-m40wzt {
+        padding: 0px 15px!important;
+        width: 85%!important;
+    }
+    
+    #controlsNav .css-m40wzt .MuiBox-root {
+        grid-column: span 6!important;
+        margin-bottom: 1rem!important;
+    }
+    .MuiContainer-root .MuiGrid-container #textFieldsNav .MuiGrid-root.MuiGrid-item,
+    .MuiContainer-root .MuiGrid-container #textFieldSelectNav .MuiGrid-root.MuiGrid-item {
+        padding: 1rem 1.52rem!important;
+    }
+    .snackBarGrid .MuiBox-root {grid-column: span 12!important;}
+    .MuiSnackbar-root.css-hh40al-MuiSnackbar-root {
+        width: 95%!important;
+    }
+    .tooltipGrid {
+        grid-template-columns: repeat(6, 1fr)!important;
+        text-align: center!important;
+    }
+}
+
+@media only screen 
+  and (min-width: 768px) 
+  and (max-width: 1366px) {
+    .colorPalette .MuiBox-root .MuiTypography-root {
+        font-size: 90%!important;
+    }
+    .css-m40wzt {
+        margin-left: 1rem!important;
+    }
+    .css-1pjh31l-MuiDrawer-docked .MuiDrawer-paper {
+        width: 220px!important;
+    }
+    
+    .SideBarNav nav a {
+        padding: 0!important;
+    }
+    .MuiContainer-root .MuiGrid-container .MuiGrid-root.MuiGrid-item {
+        padding: 32px 23px 0px 23px!important;
+        width: calc(95%)!important;
+    }
 }

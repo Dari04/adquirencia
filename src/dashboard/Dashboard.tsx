@@ -1,12 +1,24 @@
-import * as React from 'react'
-import * as styles from '@mui/material/styles';
-import { Container, Toolbar, Typography, Box, List, ListItem, ListItemButton, ListItemText, Link, IconButton,Collapse } from "@mui/material";
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
-import MuiDrawer from '@mui/material/Drawer';
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import Atoms from '../library/Atoms';
+import * as React from "react";
+import * as styles from "@mui/material/styles";
+import {
+  Container,
+  Toolbar,
+  Typography,
+  Box,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Link,
+  IconButton,
+  Collapse
+} from "@mui/material";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
+import MuiDrawer from "@mui/material/Drawer";
+import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
+import Atoms from "../library/Atoms";
 import theme from "../theme";
-import './style.css';
+import "./style.css";
 
 /* 
 HI KUSHKI DEVELOPER
@@ -14,13 +26,23 @@ THIS FOLDER CAN'T BE MODIFIED AND USED. THIS IS ONLY A
 DASHBOARD TEMPLATE THAT SHOWS THE COMPONENTS THAT YOU ARE GOING TO USE.
 */
 
-
 function Copyright(props: any) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {' Powered by: '}<br/>
-      <Link color="inherit" href="https://www.kushki.com/" target="_blank" underline="none">
-        <img src={process.env.PUBLIC_URL + "/img/poweredbyKushki.svg"} width={125} />
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {" Powered by: "}
+      <br />
+      <Link
+        color="inherit"
+        href="https://www.kushki.com/"
+        target="_blank"
+        underline="none"
+      >
+        <img src="https://6yfus.csb.app/img/poweredbyKushki.svg" width="125px" />
       </Link>
     </Typography>
   );
@@ -34,51 +56,48 @@ function MenuList() {
   };
 
   return (
-    <List
-      sx={{ width: '100%' }}
-      component="nav"
-    >
+    <List sx={{ width: "100%" }} component="nav">
       <ListItemButton component="a" onClick={handleClick}>
         <ListItemText primary="Paletas de color" />
         <span>{!open ? <ExpandLess /> : <ExpandMore />}</span>
       </ListItemButton>
-          <Collapse in={!open} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton component="a" href="#themeColors">
-                <ListItemText primary="Theme colors" />
-              </ListItemButton>
-              <ListItemButton component="a" href="#neutralColors">
-                <ListItemText primary="Neutrals" />
-              </ListItemButton>
-              <ListItemButton component="a" href="#typographyColors">
-                <ListItemText primary="Typography" />
-              </ListItemButton>
-              <ListItemButton component="a" href="#gradientColors">
-                <ListItemText primary="Gradients" />
-              </ListItemButton>
-            </List>
-          </Collapse>
+      <Collapse in={!open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItemButton component="a" href="#themeColors">
+            <ListItemText primary="Theme colors" />
+          </ListItemButton>
+          <ListItemButton component="a" href="#neutralColors">
+            <ListItemText primary="Neutrals" />
+          </ListItemButton>
+          <ListItemButton component="a" href="#typographyColors">
+            <ListItemText primary="Typography" />
+          </ListItemButton>
+          <ListItemButton component="a" href="#gradientColors">
+            <ListItemText primary="Gradients" />
+          </ListItemButton>
+        </List>
+      </Collapse>
       <ListItemButton component="a" href="#typographyNav">
         <ListItemText primary="Tipografías" />
       </ListItemButton>
-        <ListItemButton component="a" href="#buttonNav">
-          <ListItemText primary="Buttons" />
-        </ListItemButton>
+      <ListItemButton component="a" href="#buttonNav">
+        <ListItemText primary="Buttons" />
+      </ListItemButton>
       <ListItemButton component="a" href="#iconButtonNav">
         <ListItemText primary="Icon Buttons" />
       </ListItemButton>
-        <ListItemButton component="a" href="#controlsNav">
-          <ListItemText primary="Controls" />
-        </ListItemButton>
+      <ListItemButton component="a" href="#controlsNav">
+        <ListItemText primary="Controls" />
+      </ListItemButton>
       <ListItemButton component="a" href="#textFieldsNav">
         <ListItemText primary="TextFields" />
       </ListItemButton>
-      <ListItemButton component="a" href="#">
+      <ListItemButton component="a" href="#textFieldSelectNav">
         <ListItemText primary="TextField Select & ISO" />
       </ListItemButton>
       <ListItemButton component="a" href="#">
         <ListItemText primary="Icons" />
-      </ListItemButton>  
+      </ListItemButton>
       <ListItemButton component="a" href="#displayNav">
         <ListItemText primary="Data Display" />
       </ListItemButton>
@@ -92,46 +111,45 @@ interface AppBarProps extends MuiAppBarProps {
 }
 
 const AppBar = styles.styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
+  shouldForwardProp: (prop) => prop !== "open"
 })<AppBarProps>(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(['width', 'margin'], {
+  transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
+    duration: theme.transitions.duration.leavingScreen
   }),
   ...(open && {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
+    transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
+      duration: theme.transitions.duration.enteringScreen
+    })
+  })
 }));
 
-const Drawer = styles.styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
-    '& .MuiDrawer-paper': {
-      position: 'relative',
-      whiteSpace: 'nowrap',
-      width: drawerWidth,
-      transition: theme.transitions.create('width', {
+const Drawer = styles.styled(MuiDrawer, {
+  shouldForwardProp: (prop) => prop !== "open"
+})(({ theme, open }) => ({
+  "& .MuiDrawer-paper": {
+    position: "relative",
+    whiteSpace: "nowrap",
+    width: drawerWidth,
+    transition: theme.transitions.create("width", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen
+    }),
+    boxSizing: "border-box",
+    ...(!open && {
+      overflowX: "hidden",
+      transition: theme.transitions.create("width", {
         easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
+        duration: theme.transitions.duration.leavingScreen
       }),
-      boxSizing: 'border-box',
-      ...(!open && {
-        overflowX: 'hidden',
-        transition: theme.transitions.create('width', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.leavingScreen,
-        }),
-        width: '0px'
-      }),
-    },
-  }),
-);
-
+      width: "0px"
+    })
+  }
+}));
 
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
@@ -141,14 +159,18 @@ function DashboardContent() {
 
   return (
     <styles.ThemeProvider theme={theme}>
-      <Box sx={{ display: 'flex' }}>
-        <AppBar className="TopBarCollapse" position="absolute" open={open}
-        sx={{
-                ...(open && { display: 'none' }),
-              }}>
+      <Box sx={{ display: "flex" }}>
+        <AppBar
+          className="TopBarCollapse"
+          position="absolute"
+          open={open}
+          sx={{
+            ...(open && { display: "none" })
+          }}
+        >
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: "24px" // keep right padding when drawer closed
             }}
           >
             <IconButton
@@ -157,42 +179,47 @@ function DashboardContent() {
               aria-label="open drawer"
               onClick={toggleDrawer}
               sx={{
-                marginRight: '10px',
-                ...(open && { display: 'none' }),
+                marginRight: "10px",
+                ...(open && { display: "none" })
               }}
-            > <img src={process.env.PUBLIC_URL + "/img/arrowRight.svg"} width={25} height={25} />
+            >
+              {" "}
+              <img src="https://6yfus.csb.app/img/arrowRight.svg" width={25} height={25} />
             </IconButton>
             <Typography
               component="h1"
               variant="h6"
               color="inherit"
               noWrap
+              className="logoIcon" 
               sx={{ flexGrow: 1 }}
             >
-            <img src={process.env.PUBLIC_URL + "/img/logoIcon.svg"} style={{ verticalAlign: 'middle', marginRight: '10px' }}/>
-            <span className="FontWeak">Design System</span> - <span className="Font600">Kushki</span> <span className="Font400">Adquirente</span>
+              <img src="https://6yfus.csb.app/img/logoIcon.svg"/>
+              <span className="FontWeak">Design System</span> -{" "}
+              <span className="Font600">Kushki</span>{" "}
+              <span className="Font400">Adquirente</span>
             </Typography>
           </Toolbar>
         </AppBar>
         <Drawer className="SideBarNav" variant="permanent" open={open}>
           <Toolbar
             sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
               px: [3],
-              pt: [1],
+              pt: [1]
             }}
           >
-            <img src={process.env.PUBLIC_URL + "/img/logoIcon.svg"} />
+            <img src="https://6yfus.csb.app/img/logoIcon.svg" />
             <IconButton onClick={toggleDrawer}>
-            <img src={process.env.PUBLIC_URL + "/img/arrowLeft.svg"}  width={25} height={25} />
+              <img src="https://6yfus.csb.app/img/arrowLeft.svg" width={25} height={25} />
             </IconButton>
-          </Toolbar>  
+          </Toolbar>
           <List
-          sx={{
+            sx={{
               px: [1],
-              pb: [1],
+              pb: [1]
             }}
           >
             <ListItem className="listDs">
@@ -204,16 +231,16 @@ function DashboardContent() {
             <ListItem className="listTitle">
               <ListItemText>Adquirente</ListItemText>
             </ListItem>
-          </List> 
-          <MenuList />   
+          </List>
+          <MenuList />
         </Drawer>
         <Box
           component="main"
           sx={{
-            backgroundColor: '#FAFCFD',
+            backgroundColor: "#FAFCFD",
             flexGrow: 1,
-            height: '100vh',
-            overflow: 'auto',
+            height: "100vh",
+            overflow: "auto"
           }}
         >
           <Toolbar />

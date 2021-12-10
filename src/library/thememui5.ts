@@ -1097,6 +1097,23 @@ const theme = createTheme({
         }
       }
     },
+    MuiInput: {
+      styleOverrides: {
+        root: {
+          height: "44px",
+        },
+      }
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          height: "44px",
+        },
+        multiline: {
+          height: "auto"
+        }
+      }
+    },
     MuiInputLabel: {
       styleOverrides: {
         root: {
@@ -1123,7 +1140,7 @@ const theme = createTheme({
         root: {
           borderRadius: "8px!important",
           position: "relative",
-          input:{
+           "input, .MuiSelect-select":{
             padding: "10.5px 14px",
             color: Palette.text.dark,
             fontSize: ThemeFonts.screenxl.inputText + `px`,
