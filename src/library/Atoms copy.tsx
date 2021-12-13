@@ -7,11 +7,6 @@ import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
 import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
 import SearchIcon from "@mui/icons-material/Search";
-import flagPeru from "./flags/Peru.svg";
-import flagEcuador from "./flags/Ecuador.svg";
-import flagColombia from "./flags/Colombia.svg";
-import flagMexico from "./flags/Mexico.svg";
-
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import {
   Grid,
@@ -77,7 +72,6 @@ const optionsSelector = [
 ];
 // Finish Combo Box Autocomplete
 
-
 //Text field Selector
 const [age, setAge] = React.useState('');
 
@@ -86,38 +80,31 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 };
 //Finish Text field Selector
 
-//Text field SelectorFlag
-const [flag, setFlag] = React.useState('');
-
-const handleFlag = (event: React.ChangeEvent<HTMLInputElement>) => {
-  setFlag(event.target.value);
-};
-//Finish Text field SelectorFlag
-
-
 //Autocomplete SelectorFlag
 
 interface CountryType {
   code: string;
   label: string;
-  value: string;
-  flag: string;
+  phone: string;
   suggested?: boolean;
 }
 
 
 const countries: CountryType[] = [
-  { code: 'BR', label: 'Brazil', flag: '🇧🇷', value:'1'},
-  { code: 'CL', label: 'Chile', flag: '🇨🇱', value:'2' },
-  { code: 'CO', label: 'Colombia', flag: '🇨🇴', value:'3' },
-  { code: 'CR', label: 'Costa Rica', flag: '🇨🇷', value:'4'},
-  { code: 'EC', label: 'Ecuador', flag: '🇪🇨', value:'5'},
-  { code: 'MX', label: 'México', flag: '🇲🇽', value:'6'},
-  { code: 'PA', label: 'Panamá', flag: '🇵🇦', value:'7'},
-  { code: 'PE', label: 'Perú', flag: '🇵🇪', value:'8' },
-  { code: 'PY', label: 'Paraguay', flag: '🇵🇾', value:'9'},
-  { code: 'SV', label: 'El Salvador', flag: '🇸🇻',value:'10'}, 
-  { code: 'US',label: 'Estados Unidos', flag: '🇺🇸',value: '11',suggested: true,
+  { code: 'BR', label: 'Brazil', phone: '55' },
+  { code: 'CL', label: 'Chile', phone: '56' },
+  { code: 'CO', label: 'Colombia', phone: '57' },
+  { code: 'CR', label: 'Costa Rica', phone: '506' },
+  { code: 'EC', label: 'Ecuador', phone: '593' },
+  { code: 'MX', label: 'México', phone: '52' },
+  { code: 'PA', label: 'Panamá', phone: '507' },
+  { code: 'PE', label: 'Perú', phone: '51' },
+  { code: 'PY', label: 'Paraguay', phone: '595' },
+  { code: 'SV', label: 'El Salvador', phone: '503' },
+  { code: 'US',
+    label: 'Estados Unidos',
+    phone: '1',
+    suggested: true,
   },
 ];
 //Fiinish Autocomplete SelectorFlag
@@ -1850,14 +1837,6 @@ const countries: CountryType[] = [
                   Estados Unidos y Europa y en la actualidad Kushki hoy opera ya
                   en 7 países de la región.
                 </Typography>
-                <Typography
-                  color="text.primary"
-                  variant="button"
-                  gutterBottom
-                  component="div"
-                >
-                  Numeric text. Kushki La pasarela de pagos de nuestra región
-                </Typography>
               </Box>
             </Box>
             {/* --- Finish Color Light Grey --- */}
@@ -3198,502 +3177,192 @@ const countries: CountryType[] = [
             Flag TextField Select
             </Typography>         
 
-              <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
-                Selector Autocomplete - SRC img
+            <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
+                Selector Autocomplete
               </Typography>
               <Grid container spacing={3} textAlign="center">
                 <Grid item md={4} sm={12}>
                   <Box mt={2}>
-                    <Autocomplete
-                        multiple
-                        limitTags={1}
-                        options={countries}
-                        noOptionsText={'No hay opciones'}
-                        fullWidth
-                        disablePortal
-                        getOptionLabel={(option) => option.label}
-                        renderTags={options => 
-                          {
-                              return (
-                                  options.map(option =>
-                                      <React.Fragment>
-                                            <img
-                                              loading="lazy"
-                                              width="20"
-                                              src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                                              srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                                              alt=""
-                                            />
-                                            {option.label}
-                                      </ React.Fragment>))
-                      
-                        }}
-
-                        renderOption={(props, option) => {
-                          return (
-                            <React.Fragment>
-                                <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-                                  <img
-                                    loading="lazy"
-                                    width="20"
-                                    src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                                    srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                                    alt=""
-                                  />
-                                  {option.label}
-                                </Box>
-                            </ React.Fragment>
-                          );
-                      }}            
-                        renderInput={(params) => (
-                          <TextField
-                            {...params}
-                            label="País"
-                            inputProps={{
-                              ...params.inputProps,
-                            }}
-                          />
-                        )}
-                      />
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                    <Autocomplete
-                        multiple
-                        limitTags={1}
-                        options={countries}
-                        noOptionsText={'No hay opciones'}
-                        fullWidth
-                        disablePortal
-                        getOptionLabel={(option) => option.label}
-                        renderTags={options => 
-                          {
-                              return (
-                                  options.map(option =>
-                                      <React.Fragment>
-                                            <img
-                                              loading="lazy"
-                                              width="20"
-                                              src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                                              srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                                              alt=""
-                                            />
-                                            {option.label}
-                                      </ React.Fragment>))
-                      
-                        }}
-
-                        renderOption={(props, option) => {
-                          return (
-                            <React.Fragment>
-                                <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-                                  <img
-                                    loading="lazy"
-                                    width="20"
-                                    src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                                    srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                                    alt=""
-                                  />
-                                  {option.label}
-                                </Box>
-                            </ React.Fragment>
-                          );
-                      }}            
-                        renderInput={(params) => (
-                          <TextField
-                            {...params}
-                            label="País"
-                            error
-                            inputProps={{
-                              ...params.inputProps,
-                            }}
-                          />
-                        )}
-                      />
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                    <Autocomplete
-                        multiple
-                        limitTags={1}
-                        options={countries}
-                        noOptionsText={'No hay opciones'}
-                        fullWidth
-                        disablePortal
-                        disabled
-                        getOptionLabel={(option) => option.label}
-                        renderTags={options => 
-                          {
-                              return (
-                                  options.map(option =>
-                                      <React.Fragment>
-                                            <img
-                                              loading="lazy"
-                                              width="20"
-                                              src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                                              srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                                              alt=""
-                                            />
-                                            {option.label}
-                                      </ React.Fragment>))
-                      
-                        }}
-
-                        renderOption={(props, option) => {
-                          return (
-                            <React.Fragment>
-                                <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-                                  <img
-                                    loading="lazy"
-                                    width="20"
-                                    src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                                    srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                                    alt=""
-                                  />
-                                  {option.label}
-                                </Box>
-                            </ React.Fragment>
-                          );
-                      }}            
-                        renderInput={(params) => (
-                          <TextField
-                            {...params}
-                            label="País"
-                            inputProps={{
-                              ...params.inputProps,
-                            }}
-                          />
-                        )}
-                      />
-                  </Box>
-                </Grid>
-
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                    <Autocomplete
-                        multiple
-                        limitTags={1}
-                        options={countries}
-                        noOptionsText={'No hay opciones'}
-                        fullWidth
-                        disablePortal
-                        getOptionLabel={(option) => option.label}
-                        defaultValue={ [ countries[1] ] }
-                        renderTags={options => 
-                          {
-                              return (
-                                  options.map(option =>
-                                      <React.Fragment>
-                                            <img
-                                              loading="lazy"
-                                              width="20"
-                                              src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                                              srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                                              alt=""
-                                            />
-                                            {option.label}
-                                      </ React.Fragment>))
-                      
-                        }}
-
-                        renderOption={(props, option) => {
-                          return (
-                            <React.Fragment>
-                                <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-                                  <img
-                                    loading="lazy"
-                                    width="20"
-                                    src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                                    srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                                    alt=""
-                                  />
-                                  {option.label}
-                                </Box>
-                            </ React.Fragment>
-                          );
-                      }}            
-                        renderInput={(params) => (
-                          <TextField
-                            {...params}
-                            label="País"
-                            helperText="Assistive text"
-                            inputProps={{
-                              ...params.inputProps,
-                            }}
-                          />
-                        )}
-                      />
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                    <Autocomplete
-                        multiple
-                        limitTags={1}
-                        options={countries}
-                        noOptionsText={'No hay opciones'}
-                        fullWidth
-                        disablePortal
-                        getOptionLabel={(option) => option.label}
-                        defaultValue={ [ countries[2] ] }
-                        renderTags={options => 
-                          {
-                              return (
-                                  options.map(option =>
-                                      <React.Fragment>
-                                            <img
-                                              loading="lazy"
-                                              width="20"
-                                              src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                                              srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                                              alt=""
-                                            />
-                                            {option.label}
-                                      </ React.Fragment>))
-                      
-                        }}
-
-                        renderOption={(props, option) => {
-                          return (
-                            <React.Fragment>
-                                <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-                                  <img
-                                    loading="lazy"
-                                    width="20"
-                                    src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                                    srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                                    alt=""
-                                  />
-                                  {option.label}
-                                </Box>
-                            </ React.Fragment>
-                          );
-                      }}            
-                        renderInput={(params) => (
-                          <TextField
-                            {...params}
-                            label="País"
-                            helperText="Assistive text"
-                            error
-                            inputProps={{
-                              ...params.inputProps,
-                            }}
-                          />
-                        )}
-                      />
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                    <Autocomplete
-                        multiple
-                        limitTags={1}
-                        options={countries}
-                        noOptionsText={'No hay opciones'}
-                        fullWidth
-                        disablePortal
-                        disabled
-                        getOptionLabel={(option) => option.label}
-                        defaultValue={ [ countries[3] ] }
-                        renderTags={options => 
-                          {
-                              return (
-                                  options.map(option =>
-                                      <React.Fragment>
-                                            <img
-                                              loading="lazy"
-                                              width="20"
-                                              src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                                              srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                                              alt=""
-                                            />
-                                            {option.label}
-                                      </ React.Fragment>))
-                      
-                        }}
-
-                        renderOption={(props, option) => {
-                          return (
-                            <React.Fragment>
-                                <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-                                  <img
-                                    loading="lazy"
-                                    width="20"
-                                    src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                                    srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                                    alt=""
-                                  />
-                                  {option.label}
-                                </Box>
-                            </ React.Fragment>
-                          );
-                      }}            
-                        renderInput={(params) => (
-                          <TextField
-                            {...params}
-                            label="País"
-                            helperText="Assistive text"
-                            inputProps={{
-                              ...params.inputProps,
-                            }}
-                          />
-                        )}
-                      />
-                  </Box>
-                </Grid>
-              </Grid>
-              <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
-                Selector Autocomplete - Ascii Flags
-              </Typography>
-              <Grid container spacing={3} textAlign="center">
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                    <Autocomplete
-                        disablePortal
-                        options={countries}
-                        getOptionLabel={(option) => `${option.flag} ${option.label}`}
-                        noOptionsText={'No hay opciones'}
-                        fullWidth
-                        renderInput={(params) => <TextField {...params} label="País" 
-                        />}
-                      />
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
                   <Autocomplete
-                        disablePortal
-                        options={countries}
-                        getOptionLabel={(option) => `${option.flag} ${option.label}`}
-                        noOptionsText={'No hay opciones'}
-                        fullWidth
-                        renderInput={(params) => <TextField error {...params} label="País" 
-                        />}
-                      />
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                  <Autocomplete
-                        disablePortal
-                        options={countries}
-                        getOptionLabel={(option) => `${option.flag} ${option.label}`}
-                        noOptionsText={'No hay opciones'}
-                        fullWidth
-                        disabled
-                        renderInput={(params) => <TextField {...params} label="País" 
-                        />}
-                      />
-                  </Box>
-                </Grid>
-
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                    <Autocomplete
-                        disablePortal
-                        options={countries}
-                        getOptionLabel={(option) => `${option.flag} ${option.label}`}
-                        noOptionsText={'No hay opciones'}
-                        fullWidth
-                        defaultValue={countries[8]}
-                        renderInput={(params) => <TextField helperText="Assistive text" {...params} label="País" 
-                        />}
-                      />
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                  <Autocomplete
-                        disablePortal
-                        options={countries}
-                        getOptionLabel={(option) => `${option.flag} ${option.label}`}
-                        noOptionsText={'No hay opciones'}
-                        fullWidth
-                        defaultValue={countries[1]}
-                        renderInput={(params) => <TextField error helperText="Assistive text" {...params} label="País" 
-                        />}
-                      />
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                  <Autocomplete
-                        disablePortal
-                        options={countries}
-                        getOptionLabel={(option) => `${option.flag} ${option.label}`}
-                        noOptionsText={'No hay opciones'}
-                        fullWidth
-                        disabled
-                        defaultValue={countries[5]}
-                        renderInput={(params) => <TextField helperText="Assistive text" {...params} label="País" 
-                        />}
-                      />
-                  </Box>
-                </Grid>
-              </Grid>
-              {/* --- Selector Flag TextField Normal --- */}
-              <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
-                Selector Flag TextField Normal
-              </Typography>
-              <Grid container spacing={3} textAlign="center">
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>                    
-                    <TextField
-                      value={flag}
-                      onChange={handleFlag}
+                      multiple={false}
+                      limitTags={1}
+                      options={countries}
+                      noOptionsText={'No hay opciones'}
                       fullWidth
-                      label="País"
+                      disablePortal
+                      getOptionLabel={(option) => option.label}
+                      renderTags={options => 
+                        {
+                            return (
+                                options.map(option =>
+                                    <React.Fragment>
+                                          <img
+                                            loading="lazy"
+                                            width="20"
+                                            src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
+                                            srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
+                                            alt=""
+                                          />
+                                          {option.label}
+                                    </ React.Fragment>))
+                    
+                      }}
+
+                      renderOption={(props, option) => {
+                        return (
+                          <React.Fragment>
+                              <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
+                                <img
+                                  loading="lazy"
+                                  width="20"
+                                  src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
+                                  srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
+                                  alt=""
+                                />
+                                {option.label}
+                              </Box>
+                          </ React.Fragment>
+                        );
+                    }}            
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          label="País"
+                          inputProps={{
+                            ...params.inputProps,
+                          }}
+                        />
+                      )}
+                    />
+
+
+                    <Autocomplete
+                      disablePortal
+                      options={optionsSelector}
+                      noOptionsText={'No hay opciones'}
+                      fullWidth
+                      
+                      renderInput={(params) => <TextField {...params} label="Opción" />}
+                    />
+                  </Box>
+                </Grid>
+                <Grid item md={4} sm={12}>
+                  <Box mt={2}>
+                  <Autocomplete
+                      disablePortal
+                      options={optionsSelector}
+                      noOptionsText={'No hay opciones'}
+                      open={true}
+                      fullWidth
+                      renderInput={(params) => <TextField error {...params} label="Opción" />}
+                    />
+                  </Box>
+                </Grid>
+                <Grid item md={4} sm={12}>
+                  <Box mt={2}>
+                  <Autocomplete
+                      disablePortal
+                      disabled
+                      options={optionsSelector}
+                      noOptionsText={'No hay opciones'}
+                      fullWidth
+                      renderInput={(params) => <TextField {...params} label="Opción"/>}
+                    />
+                  </Box>
+                </Grid>
+                <Grid item md={4} sm={12}>
+                  <Box mt={2}>
+                    <Autocomplete
+                      disablePortal
+                      options={optionsSelector}
+                      noOptionsText={'No hay opciones'}
+                      fullWidth
+                      defaultValue={optionsSelector[1]}
+                      renderInput={(params) => <TextField  helperText="Assistive text" {...params} label="Opción" />}
+                    />
+                  </Box>
+                </Grid>
+                <Grid item md={4} sm={12}>
+                  <Box mt={2}>
+                  <Autocomplete
+                      disablePortal
+                      options={optionsSelector}
+                      noOptionsText={'No hay opciones'}
+                      fullWidth
+                      defaultValue={optionsSelector[2]}
+                      renderInput={(params) => <TextField helperText="Assistive text" error {...params} label="Opción" />}
+                    />
+                  </Box>
+                </Grid>
+                <Grid item md={4} sm={12}>
+                  <Box mt={2}>
+                  <Autocomplete
+                      disablePortal
+                      disabled
+                      options={optionsSelector}
+                      noOptionsText={'No hay opciones'}
+                      fullWidth
+                      defaultValue={optionsSelector[3]}
+                      renderInput={(params) => <TextField  helperText="Assistive text" {...params} label="Opción"/>}
+                    />
+                  </Box>
+                </Grid>
+              </Grid>
+              <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
+                Selector Normal
+              </Typography>
+              <Grid container spacing={3} textAlign="center">
+                <Grid item md={4} sm={12}>
+                  <Box mt={2}>
+                    
+                    <TextField
+                      value=""
+                      fullWidth
+                      label="Opción"
                       select
                     >
                       <MenuItem value="">
                         <small>Vacío</small>
                       </MenuItem>
-                      <MenuItem value={1}><img src="https://flagcdn.com/pe.svg" alt="" />Perú</MenuItem> {/* --- {flagPeru}--- */} 
-                      <MenuItem value={2}><img src="https://flagcdn.com/ec.svg" alt="" />Ecuador</MenuItem> {/* --- {flagEcuador}--- */} 
-                      <MenuItem value={3}><img src="https://flagcdn.com/co.svg"  alt="" />Colombia</MenuItem> {/* --- {flagColombia}--- */}
-                      <MenuItem value={4}><img src="https://flagcdn.com/mx.svg" alt="" />México</MenuItem> {/* --- {flagMexico}--- */} 
+                      <MenuItem value={1}>Opción 1</MenuItem>
+                      <MenuItem value={2}>Opción 2</MenuItem>
+                      <MenuItem value={3}>Opción 3</MenuItem>
                     </TextField>
                   </Box>
                 </Grid>
                 <Grid item md={4} sm={12}>
                   <Box mt={2}>
                     <TextField
-                      value={flag}
-                      onChange={handleFlag}
+                      value=""
                       fullWidth
-                      label="País"
+                      label="Opción"
                       select
                       error
                     >
                       <MenuItem value="">
                         <small>Vacío</small>
                       </MenuItem>
-                      <MenuItem value={1}><img src="https://flagcdn.com/pe.svg" alt="" />Perú</MenuItem> {/* --- {flagPeru}--- */} 
-                      <MenuItem value={2}><img src="https://flagcdn.com/ec.svg" alt="" />Ecuador</MenuItem> {/* --- {flagEcuador}--- */} 
-                      <MenuItem value={3}><img src="https://flagcdn.com/co.svg"  alt="" />Colombia</MenuItem> {/* --- {flagColombia}--- */}
-                      <MenuItem value={4}><img src="https://flagcdn.com/mx.svg" alt="" />México</MenuItem> {/* --- {flagMexico}--- */} 
+                      <MenuItem value={1}>Opción 1</MenuItem>
+                      <MenuItem value={2}>Opción 2</MenuItem>
+                      <MenuItem value={3}>Opción 3</MenuItem>
                     </TextField>
                   </Box>
                 </Grid>
                 <Grid item md={4} sm={12}>
                   <Box mt={2}>
-                  <TextField
-                      value={flag}
-                      onChange={handleFlag}
+                    <TextField
+                      value=""
                       fullWidth
-                      label="País"
+                      label="Opción"
                       select
                       disabled
                     >
                       <MenuItem value="">
                         <small>Vacío</small>
                       </MenuItem>
-                      <MenuItem value={1}><img src="https://flagcdn.com/pe.svg" alt="" />Perú</MenuItem> {/* --- {flagPeru}--- */} 
-                      <MenuItem value={2}><img src="https://flagcdn.com/ec.svg" alt="" />Ecuador</MenuItem> {/* --- {flagEcuador}--- */} 
-                      <MenuItem value={3}><img src="https://flagcdn.com/co.svg"  alt="" />Colombia</MenuItem> {/* --- {flagColombia}--- */}
-                      <MenuItem value={4}><img src="https://flagcdn.com/mx.svg" alt="" />México</MenuItem> {/* --- {flagMexico}--- */} 
+                      <MenuItem value={1}>Opción 1</MenuItem>
+                      <MenuItem value={2}>Opción 2</MenuItem>
+                      <MenuItem value={3}>Opción 3</MenuItem>
                     </TextField>
                   </Box>
                 </Grid>
@@ -3702,186 +3371,59 @@ const countries: CountryType[] = [
                     <TextField
                       value={1}
                       fullWidth
-                      label="País"
+                      label="Opción"
                       select
                       helperText="Assistive text"
                     >
                       <MenuItem value="">
                         <small>Vacío</small>
                       </MenuItem>
-                      <MenuItem value={1} selected><img src="https://flagcdn.com/pe.svg" alt="" />Perú</MenuItem> {/* --- {flagPeru}--- */} 
-                      <MenuItem value={2}><img src="https://flagcdn.com/ec.svg" alt="" />Ecuador</MenuItem> {/* --- {flagEcuador}--- */} 
-                      <MenuItem value={3}><img src="https://flagcdn.com/co.svg"  alt="" />Colombia</MenuItem> {/* --- {flagColombia}--- */}
-                      <MenuItem value={4}><img src="https://flagcdn.com/mx.svg" alt="" />México</MenuItem> {/* --- {flagMexico}--- */} 
+                      <MenuItem value={1} selected>Opción 1</MenuItem>
+                      <MenuItem value={2}>Opción 2</MenuItem>
+                      <MenuItem value={3}>Opción 3</MenuItem>
                     </TextField>
-            
                   </Box>
                 </Grid>
                 <Grid item md={4} sm={12}>
                   <Box mt={2}>
-                  <TextField
+                    <TextField
                       value={2}
                       fullWidth
-                      label="País"
+                      label="Opción"
                       select
-                      helperText="Assistive text"
                       error
+                      helperText="Assistive text"
                     >
                       <MenuItem value="">
                         <small>Vacío</small>
                       </MenuItem>
-                      <MenuItem value={1}><img src="https://flagcdn.com/pe.svg" alt="" />Perú</MenuItem> {/* --- {flagPeru}--- */} 
-                      <MenuItem value={2} selected><img src="https://flagcdn.com/ec.svg" alt="" />Ecuador</MenuItem> {/* --- {flagEcuador}--- */} 
-                      <MenuItem value={3}><img src="https://flagcdn.com/co.svg"  alt="" />Colombia</MenuItem> {/* --- {flagColombia}--- */}
-                      <MenuItem value={4}><img src="https://flagcdn.com/mx.svg" alt="" />México</MenuItem> {/* --- {flagMexico}--- */} 
+                      <MenuItem value={1}>Opción 1</MenuItem>
+                      <MenuItem value={2} selected>Opción 2</MenuItem>
+                      <MenuItem value={3}>Opción 3</MenuItem>
                     </TextField>
                   </Box>
                 </Grid>
                 <Grid item md={4} sm={12}>
                   <Box mt={2}>
-                  <TextField
-                      value={4}
+                    <TextField
+                      value={3}
                       fullWidth
-                      label="País"
+                      label="Opción"
                       select
-                      helperText="Assistive text"
                       disabled
+                      helperText="Assistive text"
                     >
                       <MenuItem value="">
                         <small>Vacío</small>
                       </MenuItem>
-                      <MenuItem value={1}><img src="https://flagcdn.com/pe.svg" alt="" />Perú</MenuItem> {/* --- {flagPeru}--- */} 
-                      <MenuItem value={2}><img src="https://flagcdn.com/ec.svg" alt="" />Ecuador</MenuItem> {/* --- {flagEcuador}--- */} 
-                      <MenuItem value={3}><img src="https://flagcdn.com/co.svg"  alt="" />Colombia</MenuItem> {/* --- {flagColombia}--- */}
-                      <MenuItem value={4} selected><img src="https://flagcdn.com/mx.svg" alt="" />México</MenuItem> {/* --- {flagMexico}--- */} 
+                      <MenuItem value={1}>Opción 1</MenuItem>
+                      <MenuItem value={2}>Opción 2</MenuItem>
+                      <MenuItem value={3} >Opción 3</MenuItem>
                     </TextField>
                   </Box>
                 </Grid>
               </Grid>
-              <Typography variant="h5" component="div" sx={{ pb: "30px" }}>
-                Selector Flag Ascii TextField Normal 
-              </Typography>
-              <Grid container spacing={3} textAlign="center">
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>                    
-                    <TextField
-                      value={flag}
-                      onChange={handleFlag}
-                      fullWidth
-                      label="País"
-                      select
-                    >
-                      <MenuItem value="">
-                        <small>Vacío</small>
-                      </MenuItem>
-                      <MenuItem value={1}>🇵🇪 Perú</MenuItem> {/* --- {flagPeru}--- */} 
-                      <MenuItem value={2}>🇪🇨 Ecuador</MenuItem> {/* --- {flagEcuador}--- */} 
-                      <MenuItem value={3}>🇨🇴 Colombia</MenuItem> {/* --- {flagColombia}--- */}
-                      <MenuItem value={4}>México</MenuItem> {/* --- {flagMexico}--- */} 
-                    </TextField>
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                    <TextField
-                      value={flag}
-                      onChange={handleFlag}
-                      fullWidth
-                      label="País"
-                      select
-                      error
-                    >
-                      <MenuItem value="">
-                        <small>Vacío</small>
-                      </MenuItem>
-                      <MenuItem value={1}>🇵🇪 Perú</MenuItem> {/* --- {flagPeru}--- */} 
-                      <MenuItem value={2}>🇪🇨 Ecuador</MenuItem> {/* --- {flagEcuador}--- */} 
-                      <MenuItem value={3}>🇨🇴 Colombia</MenuItem> {/* --- {flagColombia}--- */}
-                      <MenuItem value={4}>🇲🇽 México</MenuItem> {/* --- {flagMexico}--- */} 
-                    </TextField>
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                  <TextField
-                      value={flag}
-                      onChange={handleFlag}
-                      fullWidth
-                      label="País"
-                      select
-                      disabled
-                    >
-                      <MenuItem value="">
-                        <small>Vacío</small>
-                      </MenuItem>
-                      <MenuItem value={1}>🇵🇪 Perú</MenuItem> {/* --- {flagPeru}--- */} 
-                      <MenuItem value={2}>🇪🇨 Ecuador</MenuItem> {/* --- {flagEcuador}--- */} 
-                      <MenuItem value={3}>🇨🇴 Colombia</MenuItem> {/* --- {flagColombia}--- */}
-                      <MenuItem value={4}>🇲🇽 México</MenuItem> {/* --- {flagMexico}--- */} 
-                    </TextField>
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                    <TextField
-                      value={1}
-                      fullWidth
-                      label="País"
-                      select
-                      helperText="Assistive text"
-                    >
-                      <MenuItem value="">
-                        <small>Vacío</small>
-                      </MenuItem>
-                      <MenuItem value={1}>🇵🇪 Perú</MenuItem> {/* --- {flagPeru}--- */} 
-                      <MenuItem value={2}>🇪🇨 Ecuador</MenuItem> {/* --- {flagEcuador}--- */} 
-                      <MenuItem value={3}>🇨🇴 Colombia</MenuItem> {/* --- {flagColombia}--- */}
-                      <MenuItem value={4}>🇲🇽 México</MenuItem> {/* --- {flagMexico}--- */} 
-                    </TextField>
-            
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                  <TextField
-                      value={2}
-                      fullWidth
-                      label="País"
-                      select
-                      helperText="Assistive text"
-                      error
-                    >
-                      <MenuItem value="">
-                        <small>Vacío</small>
-                      </MenuItem>
-                      <MenuItem value={1}>🇵🇪 Perú</MenuItem> {/* --- {flagPeru}--- */} 
-                      <MenuItem value={2}>🇪🇨 Ecuador</MenuItem> {/* --- {flagEcuador}--- */} 
-                      <MenuItem value={3}>🇨🇴 Colombia</MenuItem> {/* --- {flagColombia}--- */}
-                      <MenuItem value={4}>🇲🇽 México</MenuItem> {/* --- {flagMexico}--- */} 
-                    </TextField>
-                  </Box>
-                </Grid>
-                <Grid item md={4} sm={12}>
-                  <Box mt={2}>
-                  <TextField
-                      value={4}
-                      fullWidth
-                      label="País"
-                      select
-                      helperText="Assistive text"
-                      disabled
-                    >
-                      <MenuItem value="">
-                        <small>Vacío</small>
-                      </MenuItem>
-                      <MenuItem value={1}>🇵🇪 Perú</MenuItem> {/* --- {flagPeru}--- */} 
-                      <MenuItem value={2}>🇪🇨 Ecuador</MenuItem> {/* --- {flagEcuador}--- */} 
-                      <MenuItem value={3}>🇨🇴 Colombia</MenuItem> {/* --- {flagColombia}--- */}
-                      <MenuItem value={4}>🇲🇽 México</MenuItem> {/* --- {flagMexico}--- */}  
-                    </TextField>
-                  </Box>
-                </Grid>
-              </Grid>
+
             {/* --- Finish Textfields Selector Flag --- */}
           </Grid>
         </Grid>

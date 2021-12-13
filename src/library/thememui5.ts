@@ -1,3 +1,4 @@
+import { red } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import { createTheme } from "@mui/material/styles";
 
@@ -531,8 +532,8 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           padding: "12px 30px",
-          height: "44px",
-          borderRadius: "16px",
+          height: 44,
+          borderRadius: 16,
           fontWeight: "400",
           letterSpacing: "0.0025em",
           lineHeight: "140%",
@@ -549,7 +550,7 @@ const theme = createTheme({
           },
         },
         sizeLarge: {
-          height: "52px",
+          height: 52,
           padding: "12px 30px",
           fontSize: ThemeFonts.screenxl.buttonlg + `px`,
           [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
@@ -563,7 +564,7 @@ const theme = createTheme({
           }
         },
         sizeSmall: {
-          height: "36px",
+          height: 36,
           padding: "8px 30px",
           fontSize: ThemeFonts.screenxl.buttonsm + `px`,
           [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
@@ -677,10 +678,10 @@ const theme = createTheme({
       },
       styleOverrides: {
         root: {
-          padding: "10px",
-          height: "44px",
-          width: "44px",
-          borderRadius: "48px",
+          padding: 10,
+          height: 44,
+          width: 44,
+          borderRadius: 48,
           fontSize: ThemeFonts.screenxl.button + `px`,
           [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
             fontSize: ThemeFonts.screenlg.button + `px`
@@ -691,11 +692,15 @@ const theme = createTheme({
           [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
             fontSize: ThemeFonts.screensm.button + `px`
           },
+          //Autocomplete textfield
+          "&.MuiAutocomplete-popupIndicator, &.MuiAutocomplete-clearIndicator":{
+            height: "auto",
+          },
         },
         sizeSmall: {
-          height: "36px",
-          width: "36px",
-          padding: "6px",
+          height: 36,
+          width: 36,
+          padding: 6,
           fontSize: ThemeFonts.screenxl.buttonsm + `px`,
           [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
             fontSize: ThemeFonts.screenlg.buttonsm + `px`
@@ -711,9 +716,9 @@ const theme = createTheme({
           },
         },
         sizeLarge: {
-          height: "52px",
-          width: "52px",
-          padding: "14px",
+          height: 52,
+          width: 52,
+          padding: 14,
           fontSize: ThemeFonts.screenxl.buttonlg + `px`,
           [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
             fontSize: ThemeFonts.screenlg.buttonlg + `px`
@@ -797,7 +802,7 @@ const theme = createTheme({
           boxShadow: "none",
         },
         track: {
-          borderRadius: "48px",
+          borderRadius: 48,
           opacity: "initial" + "!important",
           backgroundColor: Palette.neutral[600],
 
@@ -813,9 +818,9 @@ const theme = createTheme({
           },
         },
         sizeSmall: {
-          padding: "0px",
+          padding: 0,
           "&+.MuiFormControlLabel-label": {
-            marginLeft: "5px",
+            marginLeft: 5,
           },
         },
       },
@@ -885,15 +890,15 @@ const theme = createTheme({
             justifyContent: "space-between",
             display: "flex",
             a: {
-              fontSize:"13px",
+              fontSize: 13,
               letterSpacing: "0.01em",
               margin: "0px 16px",
               color:"currentColor",
             }
           },
           ".MuiAlert-action":{
-            padding: "0px",
-            marginRight: "0px",
+            padding: 0,
+            marginRight: 0,
             alignItems: "center",
             svg: {
               fontSize: "0.9em",
@@ -927,7 +932,7 @@ const theme = createTheme({
           lineHeight: "170%",
           letterSpacing: "0.02em",
           "&.sizeLarge": {
-            height:"28px",
+            height: 28,
           },
           ".MuiChip-deleteIcon": {
             fontSize: "0.85em",
@@ -937,7 +942,7 @@ const theme = createTheme({
             marginRight: "0px",
           },
           ".MuiChip-label":{
-          padding: "0",        
+          padding: 0,        
           },
           fontSize: ThemeFonts.screenxl.tag + `px`,
           [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
@@ -960,7 +965,7 @@ const theme = createTheme({
             textTransform: "none",
             lineHeight: "140%",
             letterSpacing: "normal",
-            fontWeight: "400",
+            fontWeight: 400,
             fontSize: ThemeFonts.screenxl.chip + `px`,
             [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
               fontSize: ThemeFonts.screenlg.chip + `px`
@@ -1010,7 +1015,7 @@ const theme = createTheme({
           },
         },
         sizeMedium: {
-          height:"26px",
+          height:26,
         },
       },
     },
@@ -1019,7 +1024,7 @@ const theme = createTheme({
         tooltip: {
           backgroundColor: Palette.primary.dark,
           padding: "12px 16px",
-          borderRadius:"8px",
+          borderRadius:8,
           fontWeight:"400",
           fontSize: ThemeFonts.screenxl.tooltip + `px`,
           [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
@@ -1066,9 +1071,9 @@ const theme = createTheme({
           button: {
             position: "relative",
             top: "0.2em",
-            padding: "0",
+            padding: 0,
             background: "transparent",
-            margin: "0",
+            margin: 0,
             "&:hover": {
               color: Palette.primary.components.light.hover,
               background: "transparent",
@@ -1092,7 +1097,7 @@ const theme = createTheme({
           "&.Mui-error": {
             color: Palette.text.grey,
             margin: "3px 4px 0px 4px",
-            fontSize: "13px"
+            fontSize: 13
           }
         }
       }
@@ -1100,18 +1105,22 @@ const theme = createTheme({
     MuiInput: {
       styleOverrides: {
         root: {
-          height: "44px",
+          height: 44,
         },
       }
     },
     MuiInputBase: {
       styleOverrides: {
         root: {
-          height: "44px",
+          height: 44,
+          //Autocomplete textfield
+          "&.MuiAutocomplete-inputRoot":{
+            padding: "0px 8px 0px 8px!important",
+          },
         },
         multiline: {
           height: "auto"
-        }
+        },
       }
     },
     MuiInputLabel: {
@@ -1130,7 +1139,7 @@ const theme = createTheme({
             },
         },
         outlined: {
-          borderRadius: "8px",
+          borderRadius: 8,
           top: "-5px"
         }
       }
@@ -1140,9 +1149,12 @@ const theme = createTheme({
         root: {
           borderRadius: "8px!important",
           position: "relative",
-           "input, .MuiSelect-select":{
+          "input, .MuiSelect-select,&.MuiAutocomplete-inputRoot": {
             padding: "10.5px 14px",
             color: Palette.text.dark,
+            display: "flex",
+            alignItems: "center",
+            alignContent: "center",
             fontSize: ThemeFonts.screenxl.inputText + `px`,
             [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
               fontSize: ThemeFonts.screenlg.inputText + `px`
@@ -1153,12 +1165,20 @@ const theme = createTheme({
             [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
               fontSize: ThemeFonts.screensm.inputText + `px`
             },
+            img: {
+              borderRadius: "100%",
+              height: 20,
+              width: 20,
+              objectFit: "cover",
+              marginRight: 10,
+              marginLeft: 5,
+            },
           },
-          ".MuiInputAdornment-positionEnd":{
-            color: Palette.neutral.components.disabled,
+          ".MuiInputAdornment-positionEnd, .MuiTypography-root":{
+            color: Palette.neutral.components.disabled
           },
           "&.Mui-error": {
-            input:{
+            "input, .MuiSelect-select,&.MuiAutocomplete-inputRoot": {
               color: Palette.error.dark2,
             },
           },
@@ -1167,7 +1187,7 @@ const theme = createTheme({
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline , &:hover .MuiOutlinedInput-notchedOutline":{
             borderColor: Palette.primary.light + "!important",
-            borderWidth: "1px",
+            borderWidth: 1,
           },
           "&.Mui-error .MuiOutlinedInput-notchedOutline":{
             borderColor: Palette.error.dark2 + "!important",
@@ -1177,7 +1197,7 @@ const theme = createTheme({
           },
         }
       }
-    },
+    },  
     MuiFormLabel: {
       styleOverrides: {
         root: {
@@ -1194,6 +1214,67 @@ const theme = createTheme({
           },
         }
       }
+    },
+    MuiAutocomplete: {
+      styleOverrides: {
+        root: {
+           "+ .MuiAutocomplete-popper":{
+            "& .MuiAutocomplete-listbox, & .MuiAutocomplete-noOptions": {
+              color: Palette.text.dark,
+              img: {
+                borderRadius: "100%",
+                height: 20,
+                width: 20,
+                objectFit: "cover",
+              },
+              ".MuiAutocomplete-option.Mui-focused": {
+                backgroundColor: Palette.neutral[400],
+              },
+              fontSize: ThemeFonts.screenxl.inputText + `px`,
+              [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+                fontSize: ThemeFonts.screenlg.inputText + `px`
+              },
+              [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+                fontSize: ThemeFonts.screenmd.inputText + `px`
+              },
+              [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+                fontSize: ThemeFonts.screensm.inputText + `px`
+              },
+            },
+          },
+        },
+      }
+    },
+    MuiPaper:{
+      styleOverrides: {
+        root: {
+           "&.MuiMenu-paper":{
+            "& .MuiMenu-list, & .MuiMenuItem-root": {
+              color: Palette.text.dark,
+              img: {
+                borderRadius: "100%",
+                height: 20,
+                width: 20,
+                objectFit: "cover",
+                marginRight: 10,
+              },
+              ".Mui-selected": {
+                backgroundColor: Palette.neutral[400],
+              },
+              fontSize: ThemeFonts.screenxl.inputText + `px`,
+              [`@media screen and (max-width: ${breakpoints.values.lg}px)`]: {
+                fontSize: ThemeFonts.screenlg.inputText + `px`
+              },
+              [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+                fontSize: ThemeFonts.screenmd.inputText + `px`
+              },
+              [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+                fontSize: ThemeFonts.screensm.inputText + `px`
+              },
+            },
+          },
+        },
+      }      
     },
 
   },
